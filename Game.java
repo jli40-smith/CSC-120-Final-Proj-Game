@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.io.IOException;
 
 public class Game{ //Source [1]
-    public static void enterToContinue() { //Source [2]
-        System.out.println("Press ENTER to continue...");
+    public static void enterToContinue(String prompt) { //Source [2]
+        System.out.println(prompt);
         try {
             int read = System.in.read(new byte[2]);
         } catch (IOException e) {
@@ -26,9 +26,10 @@ public class Game{ //Source [1]
         System.out.println("#+#    #+# #+#     #+#   #+#+#+#   #+#                 #+#    #+#    #+#      #+#       #+# #+#        #+#       #+# #+#    #+# #+#    #+#    #+#   ");  
         System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
 
-        enterToContinue(); 
+        enterToContinue("Press ENTER to continue..."); 
 
-        System.out.println("Exposition goes here");
+        System.out.println("Congrats! \n");
+        enterToContinue("NEXT...");
 
     }
 }

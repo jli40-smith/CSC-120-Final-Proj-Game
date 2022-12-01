@@ -4,16 +4,13 @@
 public class Item {
     private String name;
     private String description;
-    //boolean consumable;
-    private boolean consumed;
 
     /** 
      * Constructs an Item
      */
-    public Item(String name, String description, boolean consumable, boolean consumed) { 
+    public Item(String name, String description) { 
         this.name = name; 
-        this.description = description; 
-        //this.consumable = consumable; 
+        this.description = description;
     }
 
     /**
@@ -22,14 +19,6 @@ public class Item {
      */
     public String getDescription() {
         return description; 
-    }
-
-    /**
-     * Returns boolean showing if an item has been consumed or not
-     * @return boolean showing if an item has been consumed or not
-     */
-    public boolean getConsumed() { 
-        return consumed; 
     }
 
     /** 
