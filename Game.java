@@ -1,20 +1,34 @@
-import java.util.*;
-/**
- * Aggregrates Items and includes other attributes of the map which allow a player to navigate through the game 
- */
-public class Game {
-    //Hashtable rooms = new Hashtable<Integer, String[]>();
-    Hashtable<String, Item> allItems = new Hashtable<String, Item>(); 
-    ArrayList<String> droppedItems = new ArrayList<String>(); 
-    String[][] flyableMap = new String[2][2];
-    int minRoom = -1; 
-    int maxRoom = 4; 
+import java.util.Scanner;
+import java.io.IOException;
 
-    /**
-     * Main method for testing 
-     * @param args Array for command line arguments which is not currently being used  
-     */
-    public static void main(String[] args) {
+public class Game{ //Source [1]
+    public static void enterToContinue() { //Source [2]
+        System.out.println("Press ENTER to continue...");
+        try {
+            int read = System.in.read(new byte[2]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void main(String[] args) { 
+
+        //Indicates when gameplay should end 
+        boolean isPlaying = true;
+
+        Scanner playerInput = new Scanner(System.in); 
+
+        System.out.println(" ::::::::      :::     :::     ::: ::::::::::      ::::::::::: ::::::::       ::::    ::::  :::::::::: ::::    ::::   ::::::::  :::::::::  :::   :::");
+        System.out.println(":+:    :+:   :+: :+:   :+:     :+: :+:                 :+:    :+:    :+:      +:+:+: :+:+:+ :+:        +:+:+: :+:+:+ :+:    :+: :+:    :+: :+:   :+:");  
+        System.out.println("+:+         +:+   +:+  +:+     +:+ +:+                 +:+    +:+    +:+      +:+ +:+:+ +:+ +:+        +:+ +:+:+ +:+ +:+    +:+ +:+    +:+  +:+ +:+  ");  
+        System.out.println("+:+         +:+   +:+  +:+     +:+ +:+                 +:+    +:+    +:+      +:+ +:+:+ +:+ +:+        +:+ +:+:+ +:+ +:+    +:+ +:+    +:+  +:+ +:+ ");  
+        System.out.println("+#++:++#++ +#++:++#++: +#+     +:+ +#++:++#            +#+    +#+    +:+      +#+  +:+  +#+ +#++:++#   +#+  +:+  +#+ +#+    +:+ +#++:++#:    +#++:  ");  
+        System.out.println("       +#+ +#+     +#+  +#+   +#+  +#+                 +#+    +#+    +#+      +#+       +#+ +#+        +#+       +#+ +#+    +#+ +#+    +#+    +#+   ");  
+        System.out.println("#+#    #+# #+#     #+#   #+#+#+#   #+#                 #+#    #+#    #+#      #+#       #+# #+#        #+#       #+# #+#    #+# #+#    #+#    #+#   ");  
+        System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
+
+        enterToContinue(); 
+
+        System.out.println("Exposition goes here");
 
     }
 }

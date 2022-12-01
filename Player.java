@@ -6,11 +6,8 @@ public class Player {
     String name ;
     private int currentRoom = 1; 
     private ArrayList<String> inventory = new ArrayList<String>(); 
-    Game game; 
-
-    public Player(Game game) { 
-        this.game = game;
-    }
+//RN it doesnt compile because I want to make the parts that used game before use the current ROOM
+//instead...so yea it will not compile for now lmao
 
     /** 
      * Grabs and adds an item's name to the Player's inventory if it is in the allItems Hashtable
