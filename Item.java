@@ -3,29 +3,41 @@
  */
 public class Item {
     private String name;
-    private String description;
+    private String descrip;
 
     /** 
      * Constructs an Item
      */
     public Item(String name, String description) { 
         this.name = name; 
-        this.description = description;
+        this.descrip = description;
     }
+
+
+    /**
+     * Returns the name of an Item
+     * @return String name of an Item
+     */
+    public String getName() {
+        return name;
+    }
+
 
     /**
      * Returns the description of an Item
      * @return String description of an Item
      */
-    public String getDescription() {
-        return description; 
+    public String getDescrip() {
+        return descrip; 
     }
 
+
+
     /** 
-     * Overrides toString method for Items so that it returns the description of an Item 
+     * Returns the description of an item
      */
-    public String toString() {
-        return description; 
+    public String check() {
+        return getDescrip(); 
     }
 
     /**
