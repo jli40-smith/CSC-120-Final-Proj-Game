@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * Aggregrates Items and represent rooms for the Player to explore
+ * Represent rooms for the Player to explore
  */
 public class Room {
     //Hashtable rooms = new Hashtable<Integer, String[]>();

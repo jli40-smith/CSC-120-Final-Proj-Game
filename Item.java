@@ -13,7 +13,6 @@ public class Item {
         this.descrip = description;
     }
 
-
     /**
      * Returns the name of an Item
      * @return String name of an Item
@@ -21,7 +20,6 @@ public class Item {
     public String getName() {
         return name;
     }
-
 
     /**
      * Returns the description of an Item
@@ -31,10 +29,24 @@ public class Item {
         return descrip; 
     }
 
+    /**
+     * Sets the name of an Item
+     * @param new String name of an Item
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    /**
+     * Sets the description of an Item
+     * @param new String description of an Item
+     */
+    public void setDescrip(String descrip) {
+        this.descrip = descrip; 
+    }
 
     /** 
-     * Returns the description of an item
+     * Method called by verb LOOK: Returns the description of an item, and was added for clarity
      */
     public String check() {
         return getDescrip(); 

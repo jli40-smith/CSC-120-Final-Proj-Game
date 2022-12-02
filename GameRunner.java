@@ -39,12 +39,18 @@ public class GameRunner{ //Source [1]
         //Some instructions on what to do next 
 
         do { 
+            //Contents of the game 
             playerResponse = playerInput.nextLine().toUpperCase();
-            
+                if (playerResponse.equals("QUIT")) {
+                    isPlaying = false; 
+                } 
+            }
+        while (isPlaying);
+
             //conditions that check what verb it was 
-
-
-        }
-
+            if (playerResponse.equals("STOP")) {
+                System.out.println("This is the end");
+        } 
     }
+
 }
