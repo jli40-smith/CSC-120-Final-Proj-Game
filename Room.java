@@ -3,11 +3,15 @@ import java.util.*;
  * Represent rooms for the Player to explore
  */
 public class Room {
-    //Hashtable rooms = new Hashtable<Integer, String[]>();
     private int roomID; 
     private String name; 
     private String descrip; 
     private ArrayList<Item> roomInventory = new ArrayList<Item>();
+    
+    enum Direction { //Source [4]
+        NORTH, SOUTH, EAST, WEST;
+     }
+    private Map<Direction, Room> exits; 
 
     /*Constructor for Rooms */
     public Room(int roomID, String name) {

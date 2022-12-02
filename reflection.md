@@ -6,3 +6,5 @@ Source [2] https://stackoverflow.com/questions/26184409/java-console-prompt-for-
     Code for press enter to continue was taken from Stack Overflow thread 
 Source [3] https://manytools.org/hacker-tools/ascii-banner/
     ASCII Banner generator used for title screen text 
+Source [4] https://stackoverflow.com/questions/23324903/going-through-rooms-in-a-text-based-game-in-java
+    Got ideas about how to implement Rooms that a player can move through using the cardinal directions 
