@@ -48,7 +48,7 @@ public class Item {
     /** 
      * Method called by verb LOOK: Returns the description of an item, and was added for clarity
      */
-    public String check() {
+    public String look() {
         return getDescrip(); 
     }
 
