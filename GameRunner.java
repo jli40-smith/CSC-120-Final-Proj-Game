@@ -39,11 +39,27 @@ public class GameRunner{ //Source [1]
         //Some instructions on what to do next 
 
         do { 
-            //Contents of the game 
-            playerResponse = playerInput.nextLine().toUpperCase();
-                if (playerResponse.equals("QUIT")) {
-                    isPlaying = false; 
-                } 
+            //Contents of the game/inputs are checked and matched to methods to be called 
+            playerResponse = playerInput.nextLine().toLowerCase();
+            String[] playerResponseParts = playerResponse.split(" ", 2);
+
+            String verb = playerResponseParts[0];
+                if (playerResponseParts.length == 2) {
+                     switch (verb) {
+                        case "go": 
+                            System.out.println("Go command selected");
+                            break; 
+                        case "quit": 
+                            System.out.println("You have ended the simulation");
+                            isPlaying = false; 
+                            break; 
+                        default: 
+                            System.out.println("No command selected");
+
+                     }
+                } else { 
+                    System.out.println("I do not understand, please enter 2 words: a command followed by an object or direction"); 
+                }
             }
         while (isPlaying);
 

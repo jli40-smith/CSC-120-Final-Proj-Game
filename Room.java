@@ -43,6 +43,13 @@ public class Room {
         return roomID; 
     }
 
+    /**
+     * Returns the exits map of a Room
+     * @return Map of exits for  a Room
+     */
+    public Map getExits() {
+        return exits; 
+    }
     
     /**
      * Sets the name of a Room
