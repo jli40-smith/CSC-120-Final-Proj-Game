@@ -47,7 +47,7 @@ public class Room {
      * Returns the exits map of a Room
      * @return Map of exits for  a Room
      */
-    public Map getExits() {
+    public Map<Direction, Room> getExits() {
         return exits; 
     }
     
