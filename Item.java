@@ -46,9 +46,9 @@ public class Item {
     }
 
     /** 
-     * Method called by verb LOOK: Returns the description of an item, and was added for clarity
+     * Method called by verb CHECK: Returns the description of an item, and was added for clarity
      */
-    public String look() {
+    public String check() {
         return getDescrip(); 
     }
 
