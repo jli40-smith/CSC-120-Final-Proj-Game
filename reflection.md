@@ -8,3 +8,8 @@ Source [3] https://manytools.org/hacker-tools/ascii-banner/
     ASCII Banner generator used for title screen text 
 Source [4] https://stackoverflow.com/questions/23324903/going-through-rooms-in-a-text-based-game-in-java
     Got ideas about how to implement Rooms that a player can move through using the cardinal directions 
+
+IMAGE CREDITS
+[1] https://thispersondoesnotexist.com/ was used to generate portraits of Elsie and her family members; the creator of the site 
+    allows the reuse of their AI-generated images, as AI-generated works cannot be copyrighted  
+[2] https://asciiart.club/ was used to convert images to ASCII art 

@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 public class GameLoop{ //Source [1]
+    
+    /* Sets upall of the rooms of the game along with their contents and exit connections */
+    //GameSetup newGame = new GameSetup; 
+    
     /* Displays text which will print and requires the user to press enter before the game continues to run*/
     public static void enterToContinue(String prompt) { //Source [2]
         System.out.println(prompt);
@@ -21,7 +25,7 @@ public class GameLoop{ //Source [1]
 
         Scanner playerInput = new Scanner(System.in); 
         String playerResponse; 
-
+/* 
         System.out.println(" ::::::::      :::     :::     ::: ::::::::::      ::::::::::: ::::::::       ::::    ::::  :::::::::: ::::    ::::   ::::::::  :::::::::  :::   :::");
         System.out.println(":+:    :+:   :+: :+:   :+:     :+: :+:                 :+:    :+:    :+:      +:+:+: :+:+:+ :+:        +:+:+: :+:+:+ :+:    :+: :+:    :+: :+:   :+:");  
         System.out.println("+:+         +:+   +:+  +:+     +:+ +:+                 +:+    +:+    +:+      +:+ +:+:+ +:+ +:+        +:+ +:+:+ +:+ +:+    +:+ +:+    +:+  +:+ +:+  ");  
@@ -30,11 +34,12 @@ public class GameLoop{ //Source [1]
         System.out.println("       +#+ +#+     +#+  +#+   +#+  +#+                 +#+    +#+    +#+      +#+       +#+ +#+        +#+       +#+ +#+    +#+ +#+    +#+    +#+   ");  
         System.out.println("#+#    #+# #+#     #+#   #+#+#+#   #+#                 #+#    #+#    #+#      #+#       #+# #+#        #+#       #+# #+#    #+# #+#    #+#    #+#   ");  
         System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
-
+*/
         enterToContinue("Press ENTER to continue..."); 
 
         System.out.println("Congrats! \n Game instructions go here \n");
         enterToContinue("NEXT...");
+        
         //Rest of the exposition text goes here 
         //Some instructions on what to do next 
 

@@ -4,10 +4,9 @@ import java.util.*;
  */
 public class Player {
     String name ;
-    private int currentRoom = 1; 
+    private Room currentRoom; //to point to room or a room ID assoc w a room?
     private ArrayList<String> inventory = new ArrayList<String>(); 
-//RN it doesnt compile because I want to make the parts that used game before use the current ROOM
-//instead...so yea it will not compile for now lmao
+
 
 //grab 
 //drop 
