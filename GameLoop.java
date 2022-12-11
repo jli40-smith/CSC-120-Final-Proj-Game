@@ -41,13 +41,28 @@ public class GameLoop{ //Source [1]
         do { 
             //Contents of the game/inputs are checked and matched to methods to be called 
             playerResponse = playerInput.nextLine().toLowerCase() + " ";
-            String[] playerResponseParts = playerResponse.split(" ", 2);
+            String[] playerResponseParts = playerResponse.split(" ");
 
-            String verb = playerResponseParts[0];
-                if (playerResponseParts.length == 2) {
-                     switch (verb) {
+            
+            /*Executes nest switch cases based on the command entered by player, or the first word in playerResponse */
+                if (playerResponseParts.length >= 2 ) {
+                     switch (playerResponseParts[0]) {
                         case "go": 
-                            System.out.println("Go command selected");
+                            //System.out.println("Go command selected");
+                                switch ( playerResponseParts[1]){
+                                    case "n": 
+                                        System.out.println("You went north");
+                                        break; 
+                                    case "s": 
+                                        System.out.println("You went south");
+                                        break; 
+                                    case "e": 
+                                        System.out.println("You went east");
+                                        break; 
+                                    case "w": 
+                                        System.out.println("You went west");
+                                        break; 
+                                }
                             break; 
                         case "quit": 
                             System.out.println("You have ended the simulation");
@@ -58,7 +73,7 @@ public class GameLoop{ //Source [1]
 
                      }
                 } else { 
-                    System.out.println("I do not understand, please enter 2 words: a command followed by an object or direction"); 
+                    System.out.println("Please enter 2 words: a command followed by one or more arguments. Type \"help\" for assistance"); 
                 }
             }
         while (isPlaying);
