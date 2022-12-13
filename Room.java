@@ -44,8 +44,8 @@ public class Room {
 
     
     /* Adds exits NEEDS REWRITE*/
-    public void addRoomExit (Direction d, Room connectedRoom) {
-        this.exits.put(d, connectedRoom); 
+    public void addRoomExit (String direction, Room connectedRoom) {
+        this.exits.put(Direction.valueOf(direction), connectedRoom); 
     }
     
     /**
