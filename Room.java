@@ -35,11 +35,13 @@ public class Room {
     }
 
     /**
-     * Returns the exits map of a Room
-     * @return Map of exits for  a Room
+     * Returns the room which connects to the current room via an exit in the given direction
+     * @param String direction through which the exit returned connects to current room  
+     * @return Room connected via exit in the given direction 
      */
-    public Map<Direction, Room> getExits() {
-        return exits; 
+    public Room getConnectedRoom(String direction) {
+        Room connectedRoom = this.exits.get(Direction.valueOf(direction)); 
+        return connectedRoom; 
     }
 
     
