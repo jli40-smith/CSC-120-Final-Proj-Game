@@ -12,6 +12,9 @@ public class Player {
 //drop 
 //examine 
 //use 
+    public void go(String direction) {
+        currentRoom = currentRoom.getConnectedRoom(direction); 
+    }
 
     /**
      * Main method for testing 
