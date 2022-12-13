@@ -66,9 +66,11 @@ public class GameLoop{ //Source [1]
                                         break; 
                                     case "e": 
                                         System.out.println("You went east");
+                                        intern.go("EAST");
                                         break; 
                                     case "w": 
                                         System.out.println("You went west");
+                                        intern.go("WEST");
                                         break; 
                                 }
                             break; 
