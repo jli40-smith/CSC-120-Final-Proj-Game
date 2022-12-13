@@ -3,7 +3,6 @@ import java.util.*;
  * Represents the player character
  */
 public class Player {
-    String name ;
     private Room currentRoom; //to point to room or a room ID assoc w a room?
     private ArrayList<String> inventory = new ArrayList<String>(); 
 
@@ -13,7 +12,12 @@ public class Player {
 //examine 
 //use 
     public void go(String direction) {
-        currentRoom = currentRoom.getConnectedRoom(direction); 
+        currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
+        currentRoom.introduceRoom();
+    }
+
+    public void setCurrentRoom(Room r) { 
+        this.currentRoom = r; 
     }
 
     /**

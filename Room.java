@@ -10,7 +10,7 @@ public class Room {
     public static enum Direction { //Source [4]
         NORTH, SOUTH, EAST, WEST;
      }
-    private Map<Direction, Room> exits; 
+    private Map<Direction, Room> exits = new HashMap<Direction, Room>(); 
 
     /*Constructor for Rooms */
     public Room(String name, String descrip) {
@@ -39,9 +39,16 @@ public class Room {
      * @param String direction through which the exit returned connects to current room  
      * @return Room connected via exit in the given direction 
      */
-    public Room getConnectedRoom(String direction) {
-        Room connectedRoom = this.exits.get(Direction.valueOf(direction)); 
-        return connectedRoom; 
+    public Room getConnectedRoom(String direction, Room currentRoom) {
+        Direction exitDirection = Direction.valueOf(direction); //converts String direction to enum Direction 
+            if (this.exits.containsKey(exitDirection)) { 
+                Room connectedRoom = this.exits.get(Direction.valueOf(direction)); 
+                return connectedRoom; 
+            } else { 
+                System.out.println("There is no exit in this direction");
+                return currentRoom; 
+            }
+        
     }
 
     
@@ -70,7 +77,7 @@ public class Room {
      * Prints the location of the player and a description of the room 
      */
     public void introduceRoom() { 
-        System.out.println("Current Location:" + "\n" + this.getDescrip());
+        System.out.println("You are " + this.getName() + "\n" + this.getDescrip());
     }
 
     /**
