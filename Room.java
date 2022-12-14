@@ -6,6 +6,7 @@ public class Room {
     private String name; 
     private String descrip; 
     private ArrayList<Item> roomInventory = new ArrayList<Item>();
+    boolean newToPlayer= true; //If this is true, an introduction prints when the player enters the room
     
     public static enum Direction { //Source [4]
         NORTH, SOUTH, EAST, WEST;
@@ -73,11 +74,15 @@ public class Room {
         this.descrip = descrip; 
     }
 
+    public void setNewtoPlayer (boolean newToPlayer){ 
+        this.newToPlayer = newToPlayer; 
+    }
+
     /**
      * Prints the location of the player and a description of the room 
      */
-    public void introduceRoom() { 
-        System.out.println("You are " + this.getName() + "\n" + this.getDescrip());
+    public void printCurrentRoom() { 
+        System.out.println("You are  " + this.getName());
     }
 
     /**

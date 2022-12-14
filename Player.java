@@ -12,7 +12,11 @@ public class Player {
 //use 
     public void go(String direction) {
         currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
-        currentRoom.introduceRoom();
+        System.out.println("You are " + currentRoom.getName());
+        if(currentRoom.newToPlayer) { 
+            System.out.println(currentRoom.getDescrip());
+            currentRoom.setNewtoPlayer(false);
+        }
     }
 
     public void setCurrentRoom(Room r) { 

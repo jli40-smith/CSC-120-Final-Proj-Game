@@ -57,19 +57,19 @@ public class GameLoop{ //Source [1]
                             //System.out.println("Go command selected");
                                 switch ( playerResponseParts[1]){
                                     case "n": 
-                                        System.out.println("You went north");
+                                        System.out.println("\n You went north");
                                         intern.go("NORTH");
                                         break; 
                                     case "s": 
-                                        System.out.println("You went south");
+                                        System.out.println("\n You went south");
                                         intern.go("SOUTH");
                                         break; 
                                     case "e": 
-                                        System.out.println("You went east");
+                                        System.out.println("\n You went east");
                                         intern.go("EAST");
                                         break; 
                                     case "w": 
-                                        System.out.println("You went west");
+                                        System.out.println("\n You went west");
                                         intern.go("WEST");
                                         break; 
                                 }
