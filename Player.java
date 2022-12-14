@@ -6,7 +6,6 @@ public class Player {
     private Room currentRoom; //to point to room or a room ID assoc w a room?
     private ArrayList<String> inventory = new ArrayList<String>(); 
 
-
 //grab 
 //drop 
 //examine 

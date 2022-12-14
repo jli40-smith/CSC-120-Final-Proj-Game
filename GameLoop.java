@@ -80,14 +80,12 @@ public class GameLoop{ //Source [1]
                             break; 
                         default: 
                             System.out.println("No command selected");
-
                      }
                 } else { 
                     System.out.println("Please enter 2 words: a command followed by one or more arguments. Type \"help\" for assistance"); 
                 }
             }
         while (isPlaying);
-
             //conditions that check what verb it was 
             if (playerResponse.equals("STOP")) {
                 playerInput.close(); 
