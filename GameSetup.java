@@ -3,9 +3,9 @@ public class GameSetup {
     private Room outside = new Room("outside Elsie's House" + 
         "\n  /  / / / / /     /  / /" +
         "\n//  / / /  //  // /  // " +
-        "\n//    /    /    / / / /" +
-        "\n/   /    // / /  // / / " +
-        "\n / ///   /      /// / /", "It is pouring outside, and you turn down the volume of the rain on your computer");
+        "\n//    /    /    / / / / /" +
+        "\n/   /    // / /  // / // " +
+        "\n / ///   /      /// / / /", "It is pouring outside, and you turn down the volume of the rain on your computer");
     private Room foyer = new Room("in the foyer"  +
         "\n     ╔═══   ═══╗"	+          
         "\n     ║         ║" +
@@ -19,16 +19,52 @@ public class GameSetup {
         "\n   ║             ║" +
         "\n   ║             ║" +
         "\n   ╚═════   ═════╝" , "There are 3 chairs around a table set for one"); 
-    private Room bathroom = new Room("in the bathroom", "A claustrophobic space with tan tiles, you'd have to duck to wash your hands"); 
-    private Room kitchen = new Room("in the kitchen", "You immediately notice the peeling paisley wallpaper and sooty ceiling corners" ); 
-    private Room bedroom = new Room("in the bedroom", "The bed is made, and you can tell that the room was photographed for the model at midday \n It looks like someone has broken off enough of the blinds to create a hole in the lower left corner of the blinds"); 
-    private Room livingRoom = new Room("in the living room", "The walls are yellow, but you notice white rectangles with holes where pictures used to hang. There is a pile of shrink-wrapped egg cartons in the corner \n Plastic bags and magazine clippings completely obscure the coffee table from view "); 
-    private Room sunroom = new Room("in the sunroom", "A room with large glass windows, stacks of shelves, and bags of potting soil. You turn your screen brightness down, and notice that there are no plants"); 
-    private Room study = new Room("in the study", "The last room to be unlocked..."); 
-    //private Room (); 
+    private Room bathroom = new Room("in the bathroom" + 
+        "\n ╔══════╗" +	          
+        "\n ║      ║" +
+        "\n        ║" +
+        "\n ║      ║" +
+        "\n ╚══════╝", "A claustrophobic space with tan tiles, you'd have to duck to wash your hands"); 
+    private Room kitchen = new Room("in the kitchen" + 
+        "\n ╔═══════════╗" +           
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ║            " +
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ╚════   ════╝", "You immediately notice the peeling paisley wallpaper and sooty ceiling corners" ); 
+    private Room bedroom = new Room("in the bedroom" + 
+        "\n ╔════   ════╗" +	          
+        "\n ║           ║" +
+        "\n ║           ║" +      
+        "\n              " +
+        "\n ║           ║" +
+        "\n ║           ║" +
+        "\n ╚═══════════╝", "The bed is made, and you can tell that the room was photographed for the model at midday \n It looks like someone has broken off enough of the blinds to create a hole in the lower left corner of the blinds"); 
+    private Room livingRoom = new Room("in the living room" + 
+        "\n   ╔═════   ═════════════╗" + 
+        "\n   ║                     ║" +
+        "\n   ║                     ║" +
+        "\n                         ║" +
+        "\n   ║                     ║" +
+        "\n   ║                     ║" +
+        "\n   ╚═════════════════════╝", "The walls are yellow, but you notice white rectangles with holes where pictures used to hang. There is a pile of shrink-wrapped egg cartons in the corner \n Plastic bags and magazine clippings completely obscure the coffee table from view "); 
+    private Room sunroom = new Room("in the sunroom" + 
+        "\n ╔═══════╗" +	          
+        "\n ║       ║" +
+        "\n ║       ║" +
+        "\n ║       ║" +
+        "\n ║       ║" +
+        "\n ║       ║" +
+        "\n ║        " +
+        "\n ║       ║" +
+        "\n ║       ║" +
+        "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil. You turn your screen brightness down, and notice that there are no plants");  
 
     private Player intern; 
-
     public GameSetup(Player intern) { 
         this.intern = intern; 
     }
@@ -51,9 +87,6 @@ public class GameSetup {
         bedroom.addRoomExit("NORTH", kitchen);
         bedroom.addRoomExit("EAST", livingRoom);
         bedroom.addRoomExit("WEST", sunroom);
-        bedroom.addRoomExit("SOUTH", study);
-
-        study.addRoomExit("NORTH", bedroom);
 
         livingRoom.addRoomExit("WEST", bedroom);
         livingRoom.addRoomExit("NORTH", diningRoom);
