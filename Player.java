@@ -4,9 +4,17 @@ import java.util.*;
  */
 public class Player {
     private Room currentRoom; //to point to room or a room ID assoc w a room?
-    private ArrayList<String> inventory = new ArrayList<String>(); 
+    private ArrayList<Item> inventory = new ArrayList<Item>(); 
 
-//grab 
+public void grab(Item item){ 
+    int roomItemIndex = currentRoom.getItemIndex(item); 
+    int playerItemIndex = this.getItemIndex(item); 
+    if(roomItemIndex != -1 && playerItemIndex != 1) { //AND item index in the player invetory is not 1 
+        this.inventory.add(item); 
+        currentRoom.removeItem(item);
+    }
+}
+
 //drop 
 //examine 
 //use 
@@ -19,6 +27,19 @@ public class Player {
         }
     }
 
+    /* REWRITE */
+    public int getItemIndex(Item item) { 
+        return this.inventory.indexOf(item); 
+    }
+
+    /* REWRITE */
+    public void printInventory() { 
+        for (int i=0; i< this.inventory.size(); i++) { 
+            System.out.println(this.inventory.get(i));
+        }
+    }
+
+    /*REWRITE this changes the current location of the player */
     public void setCurrentRoom(Room r) { 
         this.currentRoom = r; 
     }

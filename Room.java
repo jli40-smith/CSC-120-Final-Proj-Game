@@ -52,12 +52,27 @@ public class Room {
         
     }
 
+    /*Rewrite- gets the index of first occurence of given item in the array */
+    public int getItemIndex (Item item) { 
+        return this.roomInventory.indexOf(item); 
+    }
+
     
     /* Adds exits NEEDS REWRITE*/
-    public void addRoomExit (String direction, Room connectedRoom) {
+    public void addRoomExit(String direction, Room connectedRoom) {
         this.exits.put(Direction.valueOf(direction), connectedRoom); 
     }
-    
+
+    /* Adds items to room inventory NEEDS REWRITE */
+    public void addItem(Item item) { 
+        this.roomInventory.add(item); 
+    }
+
+    /* Removes item REWRITE*/
+    public void removeItem(Item item) { 
+        this.roomInventory.remove(item); 
+    }
+
     /**
      * Sets the name of a Room
      * @param new String name of a Room
