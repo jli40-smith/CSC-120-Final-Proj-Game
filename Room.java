@@ -100,6 +100,13 @@ public class Room {
         System.out.println("You are  " + this.getName());
     }
 
+    /* REWRITE Printing inventory */
+    public void printInventory() { 
+        for(Item item:roomInventory) {
+            System.out.println(item.getName());
+    }
+    }
+
     /**
      * Main method for testing 
      * @param args Array for command line arguments which is not currently being used  

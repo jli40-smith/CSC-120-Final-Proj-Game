@@ -20,7 +20,8 @@ public void grab(Item item){
 //use 
     public void go(String direction) {
         currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
-        System.out.println("You are " + currentRoom.getName());
+        System.out.println("You are " + currentRoom.getName() + "\n You look around and see:");
+        currentRoom.printInventory();
         if(currentRoom.newToPlayer) { 
             System.out.println(currentRoom.getDescrip());
             currentRoom.setNewtoPlayer(false);

@@ -63,6 +63,10 @@ public class GameSetup {
         "\n ║       ║" +
         "\n ║       ║" +
         "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil. You turn your screen brightness down, and notice that there are no plants");  
+        
+        /* Initializing items*/
+        Item boots = new Item("boots", "black rubber boots with grass crusted on the heels");
+        Item ad = new Item("magazine", "It reads: \n 25 CLASSIC CHRISTMAS RECIPES \n 50 GIFTS under $50 \n 10 SLIMMING CROCKPOT RECIPES"); 
 
     private Player intern; 
     public GameSetup(Player intern) { 
@@ -94,6 +98,10 @@ public class GameSetup {
         sunroom.addRoomExit("EAST", bedroom);
 
         intern.setCurrentRoom(outside); //Sets the initial location of the Player
+
+        /* Adding items to each room of the house */
+        foyer.addItem(ad); 
+        foyer.addItem(boots); 
     }
     public static void main(String[] args) {
 
