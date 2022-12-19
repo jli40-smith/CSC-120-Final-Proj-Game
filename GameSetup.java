@@ -5,7 +5,7 @@ public class GameSetup {
         "\n//  / / /  //  // /  // " +
         "\n//    /    /    / / / / /" +
         "\n/   /    // / /  // / // " +
-        "\n / ///   /      /// / / /", "It is pouring outside, and you turn down the volume of the rain on your computer");
+        "\n / ///   /      /// / / /", "It is pouring outside, and you turn down the volume of the rain on your computer. There is an open door to the south of you");
     private Room foyer = new Room("in the foyer"  +
         "\n     ╔═══   ═══╗"	+          
         "\n     ║         ║" +
@@ -67,6 +67,7 @@ public class GameSetup {
         /* Initializing items*/
         Item boots = new Item("boots", "It's a pair of black rubber boots with grass crusted on the heels; there is a white tag with something scrawled on it inside");
         Item ad = new Item("magazine", "It reads: \n 25 CLASSIC CHRISTMAS RECIPES \n 50 GIFTS under $50 \n 10 SLIMMING CROCKPOT RECIPES"); 
+
         /* Adding all items to a map where their String name can be used to access the object */
     private Player intern; 
     public GameSetup(Player intern) { 

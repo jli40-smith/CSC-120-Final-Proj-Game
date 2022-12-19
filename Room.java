@@ -116,7 +116,6 @@ public class Room {
 
     /* REWRITE Printing inventory */
     public void printInventory() { 
-        System.out.println("\n ***ROOM INVENTORY***");
         for(Item item:roomInventory) {
             System.out.println(item.getName());
     }

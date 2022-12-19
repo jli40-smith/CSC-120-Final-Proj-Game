@@ -37,7 +37,8 @@ public class GameLoop{ //Source [1]
         System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
 */
 
-        /* Exposition and Instructions */
+/* 
+        // Exposition and Instructions 
         enterToContinue("Press ENTER to continue..."); 
 
         enterToContinue("Congratulations on advancing to the PERFORMANCE TASK STAGE of your application for the position of MIND UPLOADING DATA CLEANUP SPECIALIST."); 
@@ -47,13 +48,14 @@ public class GameLoop{ //Source [1]
         enterToContinue("Our records show that this is not your first time attempting this exam");
         enterToContinue("If you need a refresher on instructions for navigate the virtual home system, type HELP into the console");
         enterToContinue("GOOD LUCK");
-        System.out.println("LOADING VIRTUAL HOME MODEL □□□□□□□□");
-        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
-        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
-        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
-        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
-        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
-        
+        enterToContinue("LOADING VIRTUAL HOME MODEL ■xxxxxxx");
+        enterToContinue("LOADING VIRTUAL HOME MODEL ■■xxxxxx");
+        enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■xx");
+        enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■■■");
+*/
+        System.out.println("You are " + intern.getCurrentRoom(null).getName());
+        System.out.println(intern.getCurrentRoom(null).getDescrip());
+        /*Game loop begins */
         do { 
             //Contents of the game/inputs are checked and matched to methods to be called 
             playerResponse = playerInput.nextLine().toLowerCase() + " ";

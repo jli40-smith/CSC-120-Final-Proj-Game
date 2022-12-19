@@ -37,12 +37,13 @@ public void look(String itemName) {
 //use 
     public void go(String direction) {
         currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
-        System.out.println("You are " + currentRoom.getName() + "\n You look around and see:");
-        currentRoom.printInventory();
+        System.out.println("\n You are " + currentRoom.getName()); 
         if(currentRoom.newToPlayer) { 
             System.out.println(currentRoom.getDescrip());
             currentRoom.setNewtoPlayer(false);
         }
+         System.out.println("\n You look around and see:");
+        currentRoom.printInventory();
     }
 
     /* REWRITE */
