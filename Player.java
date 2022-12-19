@@ -5,14 +5,16 @@ import java.util.*;
 public class Player {
     private Room currentRoom; //to point to room or a room ID assoc w a room?
     private ArrayList<Item> inventory = new ArrayList<Item>(); 
+    private Map<String, Item> nameToItem = new HashMap<String, Item>(); 
 
     public void grab(String itemName){ 
-        Item itemToAdd = currentRoom.getItemFromName(itemName); 
-        if (itemToAdd != currentRoom.getItemFromName("notInRoom")) { 
-            int playerItemIndex = this.getItemIndex(itemToAdd); 
+        Item item = currentRoom.getItemFromName(itemName); 
+        if (item != currentRoom.getItemFromName("notInRoom")) { 
+            int playerItemIndex = this.getItemIndex(item); 
             if(playerItemIndex == -1) { //Checks that the player doesn't already have the item
-                this.inventory.add(itemToAdd); 
-                currentRoom.removeItem(itemToAdd);
+                this.inventory.add(item); 
+                this.nameToItem.put(item.getName(), item);
+                currentRoom.removeItem(item);
             } else { 
                 System.out.println("You already have that item");
             }
@@ -22,7 +24,16 @@ public class Player {
     }
 
 //drop 
-//examine 
+public void look(String itemName) {
+    Item item = currentRoom.getItemFromName(itemName); 
+    if (item != currentRoom.getItemFromName("notInRoom")) { 
+        System.out.println(item.getDescrip());
+    } else if (nameToItem.containsKey(itemName)) { 
+        System.out.println(nameToItem.get(itemName).getDescrip()); //Could have Room and Player both inherit from a parent so don't need to repeat code for nameToItem
+    } else { 
+        System.out.println("You can't look at " + itemName + " beacuse its not in the room or in your inventory");
+    }
+}
 //use 
     public void go(String direction) {
         currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 

@@ -36,14 +36,24 @@ public class GameLoop{ //Source [1]
         System.out.println("#+#    #+# #+#     #+#   #+#+#+#   #+#                 #+#    #+#    #+#      #+#       #+# #+#        #+#       #+# #+#    #+# #+#    #+#    #+#   ");  
         System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
 */
+
+        /* Exposition and Instructions */
         enterToContinue("Press ENTER to continue..."); 
 
-        System.out.println("Congrats! \n Game instructions go here \n");
-        enterToContinue("NEXT...");
+        enterToContinue("Congratulations on advancing to the PERFORMANCE TASK STAGE of your application for the position of MIND UPLOADING DATA CLEANUP SPECIALIST."); 
+        enterToContinue("This task tests your ability to extract vital client data from a virtual model of their last occupied residence");
+        enterToContinue("As a part of our Strategy for Data Efficiency, you will be tasked with filling an abridged version of Form 4B, or the Life Essential Data Form, using details from the client's home");
+        enterToContinue("With the completion of a Form 4B, all other superfluous details about a client, including the virtual home model, may be deleted, opening up space in our servers for our ever expanding customer base");
+        enterToContinue("Our records show that this is not your first time attempting this exam");
+        enterToContinue("If you need a refresher on instructions for navigate the virtual home system, type HELP into the console");
+        enterToContinue("GOOD LUCK");
+        System.out.println("LOADING VIRTUAL HOME MODEL □□□□□□□□");
+        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
+        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
+        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
+        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
+        System.out.println("LOADING VIRTUAL HOME MODEL 0%");
         
-        //Rest of the exposition text goes here 
-        //Some instructions on what to do next 
-
         do { 
             //Contents of the game/inputs are checked and matched to methods to be called 
             playerResponse = playerInput.nextLine().toLowerCase() + " ";
@@ -78,8 +88,12 @@ public class GameLoop{ //Source [1]
                                     System.out.println("You tried to grab " + playerResponseParts[1]); 
                                     intern.grab(playerResponseParts[1]); 
                                     intern.printInventory();
-                                    intern.getCurrentRoom(null).printInventory();
                                 }
+                            break; 
+                        case "look": 
+                            if (playerResponseParts[1].length() != 0) { 
+                                intern.look(playerResponseParts[1]); 
+                            }
                             break; 
                         case "quit": 
                             System.out.println("You have ended the simulation");

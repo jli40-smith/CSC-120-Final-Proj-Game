@@ -65,7 +65,7 @@ public class GameSetup {
         "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil. You turn your screen brightness down, and notice that there are no plants");  
         
         /* Initializing items*/
-        Item boots = new Item("boots", "black rubber boots with grass crusted on the heels");
+        Item boots = new Item("boots", "It's a pair of black rubber boots with grass crusted on the heels; there is a white tag with something scrawled on it inside");
         Item ad = new Item("magazine", "It reads: \n 25 CLASSIC CHRISTMAS RECIPES \n 50 GIFTS under $50 \n 10 SLIMMING CROCKPOT RECIPES"); 
         /* Adding all items to a map where their String name can be used to access the object */
     private Player intern; 
