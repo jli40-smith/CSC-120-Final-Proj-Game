@@ -54,7 +54,6 @@ public class GameLoop{ //Source [1]
                 if (playerResponseParts.length >= 2 ) {
                      switch (playerResponseParts[0]) {
                         case "go": 
-                            //System.out.println("Go command selected");
                                 switch ( playerResponseParts[1]){
                                     case "n": 
                                         System.out.println("\n You went north");
@@ -72,6 +71,14 @@ public class GameLoop{ //Source [1]
                                         System.out.println("\n You went west");
                                         intern.go("WEST");
                                         break; 
+                                }
+                            break; 
+                        case "grab": 
+                                if (playerResponseParts[1].length() != 0) { 
+                                    System.out.println("You tried to grab " + playerResponseParts[1]); 
+                                    intern.grab(playerResponseParts[1]); 
+                                    intern.printInventory();
+                                    intern.getCurrentRoom(null).printInventory();
                                 }
                             break; 
                         case "quit": 

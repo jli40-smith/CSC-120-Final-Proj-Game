@@ -6,6 +6,7 @@ public class Room {
     private String name; 
     private String descrip; 
     private ArrayList<Item> roomInventory = new ArrayList<Item>();
+    private Map<String, Item> nameToItem = new HashMap<String, Item>(); 
     boolean newToPlayer= true; //If this is true, an introduction prints when the player enters the room
     
     public static enum Direction { //Source [4]
@@ -17,6 +18,8 @@ public class Room {
     public Room(String name, String descrip) {
         this.name = name; 
         this.descrip = descrip; 
+        Item notInRoom= new Item("notInRoom", ""); //This Item is returned when the player tries to access an Item not in the current Room
+        nameToItem.put("notInRoom", notInRoom); 
     }
 
     /**
@@ -35,6 +38,15 @@ public class Room {
         return descrip; 
     }
 
+
+    /* REWRITE */
+    public Item getItemFromName(String itemName) { 
+        if (nameToItem.containsKey(itemName)) { 
+            return nameToItem.get(itemName); 
+        } else { 
+           return nameToItem.get("notInRoom"); 
+        }
+    }
     /**
      * Returns the room which connects to the current room via an exit in the given direction
      * @param String direction through which the exit returned connects to current room  
@@ -63,9 +75,10 @@ public class Room {
         this.exits.put(Direction.valueOf(direction), connectedRoom); 
     }
 
-    /* Adds items to room inventory NEEDS REWRITE */
+    /* Adds items to room inventory and adds an entry to nameToItem which maps the String name of the Item to the Item NEEDS REWRITE */
     public void addItem(Item item) { 
-        this.roomInventory.add(item); 
+        this.roomInventory.add(item);
+        nameToItem.put(item.getName(), item); 
     }
 
     /* Removes item REWRITE*/
@@ -89,6 +102,7 @@ public class Room {
         this.descrip = descrip; 
     }
 
+    /* REWRITE */
     public void setNewtoPlayer (boolean newToPlayer){ 
         this.newToPlayer = newToPlayer; 
     }
@@ -102,6 +116,7 @@ public class Room {
 
     /* REWRITE Printing inventory */
     public void printInventory() { 
+        System.out.println("\n ***ROOM INVENTORY***");
         for(Item item:roomInventory) {
             System.out.println(item.getName());
     }

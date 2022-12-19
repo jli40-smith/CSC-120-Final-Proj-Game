@@ -6,14 +6,20 @@ public class Player {
     private Room currentRoom; //to point to room or a room ID assoc w a room?
     private ArrayList<Item> inventory = new ArrayList<Item>(); 
 
-public void grab(Item item){ 
-    int roomItemIndex = currentRoom.getItemIndex(item); 
-    int playerItemIndex = this.getItemIndex(item); 
-    if(roomItemIndex != -1 && playerItemIndex != 1) { //AND item index in the player invetory is not 1 
-        this.inventory.add(item); 
-        currentRoom.removeItem(item);
+    public void grab(String itemName){ 
+        Item itemToAdd = currentRoom.getItemFromName(itemName); 
+        if (itemToAdd != currentRoom.getItemFromName("notInRoom")) { 
+            int playerItemIndex = this.getItemIndex(itemToAdd); 
+            if(playerItemIndex == -1) { //Checks that the player doesn't already have the item
+                this.inventory.add(itemToAdd); 
+                currentRoom.removeItem(itemToAdd);
+            } else { 
+                System.out.println("You already have that item");
+            }
+        } else {
+            System.out.println("That item is not in the room");
+        }
     }
-}
 
 //drop 
 //examine 
@@ -33,8 +39,12 @@ public void grab(Item item){
         return this.inventory.indexOf(item); 
     }
 
+    public Room getCurrentRoom (Room currentRoom) { 
+        return this.currentRoom; 
+    }
     /* REWRITE */
     public void printInventory() { 
+        System.out.println("\n ***PLAYER INVENTORY***");
         for (int i=0; i< this.inventory.size(); i++) { 
             System.out.println(this.inventory.get(i));
         }
