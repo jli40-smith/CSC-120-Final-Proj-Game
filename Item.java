@@ -51,10 +51,6 @@ public class Item {
     public String check() {
         return getDescrip(); 
     }
-    /*REWRITE- overrided toString method  */
-    public String toString(){
-        return this.name; 
-     }
 
     /**
      * Main method for testing 

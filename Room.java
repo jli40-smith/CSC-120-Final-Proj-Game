@@ -117,8 +117,10 @@ public class Room {
     /* REWRITE Printing inventory */
     public void printInventory() { 
         for(Item item:roomInventory) {
-            System.out.println(item.getName());
-    }
+            if (!item.getIsHidden()) { 
+                System.out.println(item.getName());
+            }
+        }
     }
 
     /**
