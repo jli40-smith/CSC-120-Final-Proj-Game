@@ -98,6 +98,13 @@ public class GameLoop{ //Source [1]
                                     intern.printInventory();
                                 }
                             break; 
+                        case "drop": 
+                            if (playerResponseParts[1].length() != 0) { 
+                                System.out.println("You reached for " + playerResponseParts[1]); 
+                                intern.drop(playerResponseParts[1]); 
+                                intern.printInventory();
+                            }
+                        break; 
                         case "look": 
                             if (playerResponseParts[1].equals("inventory")) { 
                                 intern.printInventory();

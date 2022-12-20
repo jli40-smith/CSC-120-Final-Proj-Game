@@ -52,6 +52,10 @@ public class Room {
         return descrip; 
     }
 
+    /* returns the nameToItem map */
+    public Map<String, Item> getNameToItem(){
+        return nameToItem; 
+    }
 
     /* REWRITE */
     public Item getItemFromName(String itemName) { 
