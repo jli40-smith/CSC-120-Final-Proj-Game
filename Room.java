@@ -8,6 +8,9 @@ public class Room {
     private ArrayList<Item> roomInventory = new ArrayList<Item>();
     private Map<String, Item> nameToItem = new HashMap<String, Item>(); 
     boolean newToPlayer= true; //If this is true, an introduction prints when the player enters the room
+    boolean locked = false; 
+    String prompt; 
+    String password; 
     
     public static enum Direction { //Source [4]
         NORTH, SOUTH, EAST, WEST;
@@ -18,6 +21,17 @@ public class Room {
     public Room(String name, String descrip) {
         this.name = name; 
         this.descrip = descrip; 
+        Item notInRoom= new Item("notInRoom", ""); //This Item is returned when the player tries to access an Item not in the current Room
+        nameToItem.put("notInRoom", notInRoom); 
+    }
+
+    /* Overloaded constructor for Rooms which allows them to be locked */
+    public Room(String name, String descrip, boolean locked, String prompt, String password) {
+        this.name = name; 
+        this.descrip = descrip; 
+        this.locked = locked; 
+        this.prompt = prompt; 
+        this.password = password; 
         Item notInRoom= new Item("notInRoom", ""); //This Item is returned when the player tries to access an Item not in the current Room
         nameToItem.put("notInRoom", notInRoom); 
     }

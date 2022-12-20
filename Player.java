@@ -36,14 +36,33 @@ public void look(String itemName) {
 }
 //use 
     public void go(String direction) {
-        currentRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
-        System.out.println("\n You are " + currentRoom.getName()); 
-        if(currentRoom.newToPlayer) { 
-            System.out.println(currentRoom.getDescrip());
-            currentRoom.setNewtoPlayer(false);
+        Room connectedRoom = currentRoom.getConnectedRoom(direction, currentRoom); 
+        boolean connectedRoomIsUnlocked = !currentRoom.getConnectedRoom(direction, currentRoom).locked; 
+        if (connectedRoomIsUnlocked) { //if the room is not locked
+            currentRoom = connectedRoom; 
+                System.out.println("\n You are " + currentRoom.getName()); 
+                if(currentRoom.newToPlayer) { 
+                    System.out.println(currentRoom.getDescrip());
+                    currentRoom.setNewtoPlayer(false);
+                }
+                System.out.println("You look around and see:");
+                currentRoom.printInventory();
+        } else { 
+            System.out.println("The room you are trying to enter is locked, you must enter a password for access");
+            System.out.println(connectedRoom.prompt);
+
+            Scanner passwordInput = new Scanner(System.in); 
+            String passwordAttempt = passwordInput.nextLine().toLowerCase(); 
+
+            if (passwordAttempt.equals(connectedRoom.password)) {
+                System.out.println(connectedRoom.getName() + " has been unlocked");
+                connectedRoom.locked = false; 
+            } else { 
+                System.out.println("Password attempt failed");
+                
+            }
+            
         }
-         System.out.println("You look around and see:");
-        currentRoom.printInventory();
     }
 
     /* REWRITE */

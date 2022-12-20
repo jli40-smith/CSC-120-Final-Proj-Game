@@ -20,7 +20,7 @@ public class GameSetup {
         "\n                  " +
         "\n   ║             ║" +
         "\n   ║             ║" +
-        "\n   ╚═════   ═════╝" , "There are 3 chairs around a table set for one"); 
+        "\n   ╚═════   ═════╝" , "There are 3 chairs around a table set for one", true, "This house is on _ _ _ _ Street", "pike"); 
     private Room bathroom = new Room("in the bathroom" + 
         "\n ╔══════╗" +	          
         "\n ║      ║" +

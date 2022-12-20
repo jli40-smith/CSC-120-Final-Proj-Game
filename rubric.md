@@ -10,7 +10,7 @@ _____ 2 pts: Submission includes a **cheat sheet** (`cheatsheet.md`) documenting
 
 **YES** 2 pts: Storyline driving the game is **engaging**, and individual elements of play make sense within the context of the story.
 
-_____ 2 pts: Game has **multiple possible paths / outcomes** (i.e. gameplay depends on player's choices and is not the same every time).
+**YES** 2 pts: Game has **multiple possible paths / outcomes** (i.e. gameplay depends on player's choices and is not the same every time).
 
 **YES** 1 pt: Gameplay supports **reversible moves** where reasonable (e.g., if you pick up an object, you should be able to put it back down again later, possibly in a different place; if you go north then you should be able to return to the previous location by going south unless something has blocked your return path).
 
