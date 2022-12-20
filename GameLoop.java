@@ -41,19 +41,18 @@ public class GameLoop{ //Source [1]
         // Exposition and Instructions 
         enterToContinue("Press ENTER to continue..."); 
 
-        enterToContinue("NEW MESSAGE:"); 
         enterToContinue("I hope this letter reaches you before everything we have left is deleted");
         enterToContinue("You must be the intern working at the mind uploading company which has stored my mother's information");
         enterToContinue("You have access to a virtual model of her home which contains digital records of her possessions, the rooms in her house, and more");
         enterToContinue("My mother lived before the country-wide literature ban, and her home model is one of the last places where you can find copies of now forbidden books");
-        enterToContinue("Before her death, she disguised the files for the banned books as other household objects and added many other ordinary books to her house as decoys");
-        enterToContinue("While I cannot directly give you the books' titles, I have given you a list of hints for every one of the 8 titles you must recover");
-        enterToContinue("Type LOOK REF to check that reference list");
-        enterToContinue("Please GRAB each of the banned books you find and store them in your inventory in alphabetical order by their author's last name, translated to English");
-        enterToContinue("Once you have prepared your inventory and checked that it is 100% in order, go NORTH 3 times from the foyer to reach the MESSAGE room");
-        enterToContinue("I will only have one chance to copy the files from your inventory as soon as you enter the MESSAGE room, so please double check before you go!");
+        enterToContinue("While I cannot directly give you the books' titles, I have given you a list of hints for every one of the 8 SPECIFIC titles you must recover");
+        enterToContinue("You might encounter other books in your search, but I only want those on the list");
+        enterToContinue("Type LOOK REFERENCE to check that reference list");
+        enterToContinue("Please GRAB each of the banned books you find and store them in your inventory");
+        enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 3 times from the foyer to reach the MESSAGE room and send them to me with OPEN TRANSMISSION");
+        enterToContinue("I will only have one chance to copy the files from your inventory as soon as you type OPEN TRANSMISSION in the MESSAGE room, so please double check before you contact me!");
         enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type HELP into the console");
-        enterToContinue("GOOD LUCK");
+        enterToContinue("GOOD LUCK - Janet");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■0000000");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■00");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■■■");
@@ -61,6 +60,7 @@ public class GameLoop{ //Source [1]
         System.out.println("\n You are " + intern.getCurrentRoom(null).getName());
         System.out.println(intern.getCurrentRoom(null).getDescrip());
         intern.getCurrentRoom(null).printInventory(); 
+        
         /*Game loop begins */
         do { 
             //Contents of the game/inputs are checked and matched to methods to be called 
@@ -101,6 +101,9 @@ public class GameLoop{ //Source [1]
                         case "look": 
                             if (playerResponseParts[1].equals("inventory")) { 
                                 intern.printInventory();
+                            } else if (playerResponseParts[1].equals("room")) { 
+                                System.out.println("\n You look around and see:");
+                                intern.getCurrentRoom(null).printInventory();
                             } else if (playerResponseParts[1].length() != 0) { 
                                 intern.look(playerResponseParts[1]); 
                             }

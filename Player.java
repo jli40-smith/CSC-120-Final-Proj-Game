@@ -10,14 +10,18 @@ public class Player {
     public void grab(String itemName){ 
         Item item = currentRoom.getItemFromName(itemName); 
         if (item != currentRoom.getItemFromName("notInRoom")) { 
-            int playerItemIndex = this.getItemIndex(item); 
-            if(playerItemIndex == -1) { //Checks that the player doesn't already have the item
-                this.inventory.add(item); 
-                this.nameToItem.put(item.getName(), item);
-                currentRoom.removeItem(item);
-            } else { 
-                System.out.println("You already have that item");
-            }
+                if (this.inventory.size() < 8) { 
+                    int playerItemIndex = this.getItemIndex(item); 
+                    if(playerItemIndex == -1) { //Checks that the player doesn't already have the item
+                        this.inventory.add(item); 
+                        this.nameToItem.put(item.getName(), item);
+                        currentRoom.removeItem(item);
+                    } else { 
+                        System.out.println("You already have that item");
+                    }
+                } else { 
+                    System.out.println("You cannot pick up more than 8 items");
+                }
         } else {
             System.out.println("That item is not in the room");
         }
@@ -55,7 +59,7 @@ public void look(String itemName) {
             String passwordAttempt = passwordInput.nextLine().toLowerCase(); 
 
             if (passwordAttempt.equals(connectedRoom.password)) {
-                System.out.println(connectedRoom.getName() + " has been unlocked");
+                System.out.println("The room has been unlocked");
                 connectedRoom.locked = false; 
             } else { 
                 System.out.println("Password attempt failed");

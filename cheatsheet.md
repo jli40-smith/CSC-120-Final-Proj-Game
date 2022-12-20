@@ -1,13 +1,17 @@
 ***COMMANDS***
-(Reference)
+**(General Commands- type them verbatim to use)**
 open help - shows list of available commands and tips on how to use them 
-open form - opens the form so that the use command may be used to apply items to each field in the Form 
-
-
-(Actions) 
-go n/e/s/w - moves you in a cardinal direction 
-grab item - adds item to your  inventory 
-look item - shows description of item in the room or in your inventory
+open transmission - (ONLY works in MESSAGE ROOM) sends your inventory to Janet for verification
 look inventory - shows your inventory
+look room- shows the inventory of the current room
+
+**(Specific Commands- must be followed by specific direction or item)**
+go n/e/s/w - moves you in a cardinal direction 
+    ex: go s
+grab item - adds item to your  inventory 
+    ex: grab magazine
+look item - shows description of the item in the room or in your inventory  
+    ex: look list
+
 
 
