@@ -41,12 +41,18 @@ public class GameLoop{ //Source [1]
         // Exposition and Instructions 
         enterToContinue("Press ENTER to continue..."); 
 
-        enterToContinue("Congratulations on advancing to the PERFORMANCE TASK STAGE of your application for the position of MIND UPLOAD DATA CLEANUP SPECIALIST."); 
-        enterToContinue("This task tests your ability to extract vital client data from a virtual model of their last occupied residence");
-        enterToContinue("You will be tasked with filling an abridged version of Form 4B, or the Life Essential Data Form using details from the client's home");
-        enterToContinue("With the completion of the Form 4B, all other superfluous details about a client, including the virtual home model, may be deleted");
-        enterToContinue("Our records show that this is not your first time attempting this exam");
-        enterToContinue("If you need a refresher on instructions for navigate the virtual home system, type HELP into the console");
+        enterToContinue("NEW MESSAGE:"); 
+        enterToContinue("I hope this letter reaches you before everything we have left is deleted");
+        enterToContinue("You must be the intern working at the mind uploading company which has stored my mother's information");
+        enterToContinue("You have access to a virtual model of her home which contains digital records of her possessions, the rooms in her house, and more");
+        enterToContinue("My mother lived before the country-wide literature ban, and her home model is one of the last places where you can find copies of now forbidden books");
+        enterToContinue("Before her death, she disguised the files for the banned books as other household objects and added many other ordinary books to her house as decoys");
+        enterToContinue("While I cannot directly give you the books' titles, I have given you a list of hints for every one of the 8 titles you must recover");
+        enterToContinue("Type LOOK REF to check that reference list");
+        enterToContinue("Please GRAB each of the banned books you find and store them in your inventory in alphabetical order by their author's last name, translated to English");
+        enterToContinue("Once you have prepared your inventory and checked that it is 100% in order, go NORTH 3 times from the foyer to reach the MESSAGE room");
+        enterToContinue("I will only have one chance to copy the files from your inventory as soon as you enter the MESSAGE room, so please double check before you go!");
+        enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type HELP into the console");
         enterToContinue("GOOD LUCK");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■0000000");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■00");
@@ -102,10 +108,21 @@ public class GameLoop{ //Source [1]
                         case "open":
                             if (playerResponseParts[1].equals("help")) { 
                                 System.out.println("cheatsheet goes here!");
-                            } 
+                            } else if (playerResponseParts[1].equals("transmission")) { 
+                                if (intern.getCurrentRoom(null).getDescrip().equals("message room")) { 
+                                    if (newGame.verifyBooks()) { 
+                                        System.out.println("Success! \n NEW MESSAGE \n Thank you!");
+                                        isPlaying = false; 
+                                    } else {
+                                        System.out.println("You did not give Janet the right items... Those books may never be saved for posterity");
+                                    }
+                                    } else { 
+                                    System.out.println("You can only transmit messages in the MESSAGE room");
+                                }
+                            }
                             break; 
                         case "quit": 
-                            System.out.println("You have ended the simulation");
+                            System.out.println("You have exited the home model");
                             isPlaying = false; 
                             break; 
                         default: 

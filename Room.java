@@ -58,7 +58,7 @@ public class Room {
                 Room connectedRoom = this.exits.get(Direction.valueOf(direction)); 
                 return connectedRoom; 
             } else { 
-                System.out.println("There is no exit in this direction");
+                System.out.println("There is no exit in that direction");
                 return currentRoom; 
             }
         

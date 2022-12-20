@@ -51,6 +51,11 @@ public void look(String itemName) {
         return this.inventory.indexOf(item); 
     }
 
+    /* REWRITE */
+    public ArrayList<Item> getInventory() { 
+        return this.inventory; 
+    }
+
     public Room getCurrentRoom (Room currentRoom) { 
         return this.currentRoom; 
     }

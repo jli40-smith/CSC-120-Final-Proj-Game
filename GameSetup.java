@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class GameSetup { 
     /* Initializing all the rooms in the house */
     private Room outside = new Room("outside Elsie's House" + 
@@ -63,8 +65,10 @@ public class GameSetup {
         "\n ║       ║" +
         "\n ║       ║" +
         "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil. You turn your screen brightness down, and notice that there are no plants");  
-        
-        /* Initializing items*/
+    private Room msgRoomCorridor = new Room("approaching the MESSAGE ROOM. GO SOUTH to return to the virtual home model \n GO NORTH again to SEND JANET the books in your inventory \n You have one chance to get it right", " ");  
+    private Room msgRoom = new Room("trying to send JANET what you think are the banned books \n Did you get them right?", "message room"); 
+    
+    /* Initializing items*/
         Item mail = new Item("mail", "░░█░░░███░░░█░░" + 
             "\n░█░█░░█░█░░█░█░" + 
             "\n░███░░█░█░░███░" +
@@ -76,12 +80,12 @@ public class GameSetup {
         Item photo = new Item("album", "It was lying open on the table. \n One person with long black hair seems to appear in all of the photos"); 
         Item razor = new Item("razor", "A blue plastic razor"); 
         Item chisel = new Item("chisel", "A sharp rectangular tool with edges on both sides"); 
-        Item bookR = new Item("red_book", "Divine Comedy by Dante Alighieri"); 
-        Item bookB = new Item("blue_book", "SEGVNDA PARTE \n DEL INGENIOSO CAVALLERO DON \n QVIXOTE DE LA MANCHA"); 
-        Item bookY = new Item("yellow_book", "The Prince by Niccolo Machiavelli"); 
-        Item bookG = new Item("gray_book", "Crime and Punishment by Fyodor Dostoyevsky"); 
-        Item bookO = new Item("orange_book", "Things Fall Apart by Chinua Achebe"); 
-        Item bookP = new Item("purple_book", "The Tale of Genji by Murasaki Shikibu"); 
+        Item alighieri = new Item("lion_statue", "Divine Comedy by Dante Alighieri"); 
+        Item cervantes = new Item("cookbook", "SEGVNDA PARTE \n DEL INGENIOSO CAVALLERO DON \n QVIXOTE DE LA MANCHA \n Miguel de Cervantes"); 
+        Item machiavelli = new Item("yellow_book", "The Prince by Niccolo Machiavelli"); 
+        Item dostoyevsky = new Item("gray_book", "Crime and Punishment by Fyodor Dostoyevsky"); 
+        Item achebe = new Item("orange_book", "Things Fall Apart by Chinua Achebe"); 
+        Item shikibu = new Item("purple_book", "The Tale of Genji by Murasaki Shikibu"); 
         Item diploma = new Item("diploma", "Bachelor of Arts \n Philosophy \n Awarded to E. Prentice"); 
         Item holidayCard = new Item("holiday_card", "It reads: Wishing you a Merry Christmas! \n Mom, I couldn't make it again this year because of a conference, but we got you that gift off your list! \n Please brew your favorite blends with the new machine and enjoy your retirement :) \n - Love, Janet "); 
         Item jewelryBox = new Item("silver_box", "It contains: \n Earrings, two tangled chain necklaces, a gold ring with E engraved on it"); 
@@ -95,6 +99,9 @@ public class GameSetup {
         Item espressoMaker = new Item("espresso_machine", "It's in a cardboard box and you can't see inside\n But it says espresso machine on the packaging"); 
         Item clipping = new Item("news_clipping", "Under a photo of a smiling girl with blonde hair and tortoiseshell glasses, it reads: \n ...Outside of school, Elsie performs in the Heron Street Community Theatre and is studying Spanish on a quest to read all of the world's greatest works \n Our next senior..."); 
         Item coffeePot = new Item("coffee_pot", "A metal pot with a long attached handle"); 
+    
+        /*Correct list of books to bring to the MESSAGE room  */
+        ArrayList<Item> correctBooks = new ArrayList<Item>(); 
 
         /* Adding all items to a map where their String name can be used to access the object */
     private Player intern; 
@@ -102,6 +109,10 @@ public class GameSetup {
         this.intern = intern; 
     }
     public void setUpGame() { 
+        /* Setting up exits to each Room */
+        msgRoomCorridor.addRoomExit("NORTH", msgRoom);
+        msgRoomCorridor.addRoomExit("SOUTH", outside);
+        outside.addRoomExit("NORTH", msgRoomCorridor);
         outside.addRoomExit("SOUTH", foyer);
 
         foyer.addRoomExit("NORTH", outside );
@@ -128,14 +139,13 @@ public class GameSetup {
 
         intern.setCurrentRoom(foyer); //Sets the initial location of the Player
 
-        /* Adding items to each room of the house */
+        /* Adding decoy items to each room of the house */
         outside.addItem(mail);
         foyer.addItem(mag); 
+        foyer.addItem(alighieri);
         foyer.addItem(boots); 
         foyer.addItem(card);
         diningRoom.addItem(photo);
-        diningRoom.addItem(bookS);
-        bedroom.addItem(bookR);
         bathroom.addItem(razor);
         livingRoom.addItem(chisel);
         livingRoom.addItem(diploma);
@@ -150,7 +160,23 @@ public class GameSetup {
         foyer.addItem(espressoMaker);
         kitchen.addItem(coffeePot);
         bedroom.addItem(clipping);
+        /* Adding books to the correct list you have to send to Janet*/
+        correctBooks.add(alighieri); 
     }
+
+    /* Checks if books are right */
+        public boolean verifyBooks(){ 
+            if (intern.getInventory().equals(correctBooks)) { 
+                return true; 
+            } else { 
+                return false; 
+            }
+        }
+
+    /* Rewrite */
+        public ArrayList<Item> getCorrectBooks(){ 
+            return this.correctBooks; 
+        }
     public static void main(String[] args) {
 
     }
