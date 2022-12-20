@@ -42,7 +42,7 @@ public void look(String itemName) {
             System.out.println(currentRoom.getDescrip());
             currentRoom.setNewtoPlayer(false);
         }
-         System.out.println("\n You look around and see:");
+         System.out.println("You look around and see:");
         currentRoom.printInventory();
     }
 
@@ -56,9 +56,9 @@ public void look(String itemName) {
     }
     /* REWRITE */
     public void printInventory() { 
-        System.out.println("\n ***PLAYER INVENTORY***");
+        System.out.println("\n ***YOUR INVENTORY***");
         for (int i=0; i< this.inventory.size(); i++) { 
-            System.out.println(this.inventory.get(i));
+            System.out.println(this.inventory.get(i).getName());
         }
     }
 

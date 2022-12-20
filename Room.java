@@ -117,9 +117,7 @@ public class Room {
     /* REWRITE Printing inventory */
     public void printInventory() { 
         for(Item item:roomInventory) {
-            if (!item.getIsHidden()) { 
-                System.out.println(item.getName());
-            }
+            System.out.println(item.getName());
         }
     }
 
