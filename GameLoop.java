@@ -49,7 +49,7 @@ public class GameLoop{ //Source [1]
         enterToContinue("You might encounter other books in your search, but I only want those on the list");
         enterToContinue("Type LOOK REFERENCE to check that reference list");
         enterToContinue("Please GRAB each of the banned books you find and store them in your inventory");
-        enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 3 times from the foyer to reach the MESSAGE room and send them to me with OPEN TRANSMISSION");
+        enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 2 times from the foyer to reach the MESSAGE room and send them to me with OPEN TRANSMISSION");
         enterToContinue("I will only have one chance to copy the files from your inventory as soon as you type OPEN TRANSMISSION in the MESSAGE room, so please double check before you contact me!");
         enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type HELP into the console");
         enterToContinue("GOOD LUCK - Janet");
@@ -100,7 +100,7 @@ public class GameLoop{ //Source [1]
                             break; 
                         case "drop": 
                             if (playerResponseParts[1].length() != 0) { 
-                                System.out.println("You reached for " + playerResponseParts[1]); 
+                                System.out.println("You tried to drop " + playerResponseParts[1]); 
                                 intern.drop(playerResponseParts[1]); 
                                 intern.printInventory();
                             }
@@ -119,21 +119,35 @@ public class GameLoop{ //Source [1]
                             if (playerResponseParts[1].equals("help")) { 
                                 System.out.println("cheatsheet goes here!");
                             } else if (playerResponseParts[1].equals("transmission")) { 
-                                if (intern.getCurrentRoom(null).getDescrip().equals("message room")) { 
+                                if (intern.getCurrentRoom(null).getDescrip().equals("***")) { 
                                     if (newGame.verifyBooks()) { 
-                                        System.out.println("Success! \n NEW MESSAGE \n Thank you!");
+                                        enterToContinue("NEW MESSAGE:");
+                                        enterToContinue("I have received your files");
+                                        enterToContinue("You have recovered all the correct books");
+                                        enterToContinue("We owe you a lot");
+                                        enterToContinue("A 4 digit sum will be wired to you for your hard work");
+                                        enterToContinue("More importantly, know that posterity will thank you for saving these books...");
                                         isPlaying = false; 
                                     } else {
-                                        System.out.println("You did not give Janet the right items... Those books may never be saved for posterity");
+                                        enterToContinue("NEW MESSAGE:");
+                                        enterToContinue("I have received your files");
+                                        enterToContinue("You did not recover the correct books");
+                                        enterToContinue("Keep going SOUTH if you want to try again, or EXIT HOUSE to give up");
                                     }
                                     } else { 
                                     System.out.println("You can only transmit messages in the MESSAGE room");
                                 }
                             }
                             break; 
-                        case "quit": 
-                            System.out.println("You have exited the home model");
-                            isPlaying = false; 
+                        case "exit": 
+                            if (playerResponseParts[1].equals("house")){
+                                System.out.println("You have exited the home model");
+                                enterToContinue("NEW MESSAGE:");
+                                enterToContinue("I had faith in you");
+                                enterToContinue("But maybe we were wrong to put you under so much pressure...");
+                                enterToContinue("Goodbye");
+                                isPlaying = false; 
+                            }
                             break; 
                         default: 
                             System.out.println("No command selected");

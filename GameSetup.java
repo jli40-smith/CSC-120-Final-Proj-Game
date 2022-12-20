@@ -65,8 +65,7 @@ public class GameSetup {
         "\n ║       ║" +
         "\n ║       ║" +
         "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil");  
-    private Room msgRoomCorridor = new Room("approaching the MESSAGE ROOM. GO SOUTH to return to the virtual home model \n GO NORTH again to SEND JANET the books in your inventory \n You have one chance to get it right", " ");  
-    private Room msgRoom = new Room("trying to send JANET what you think are the banned books \n type OPEN TRANSMISSION when you are ready", "message room"); 
+    private Room msgRoom = new Room("in the MESSAGE room. Type OPEN TRANSMISSON to send JANET what you think are the banned books whenever you are ready", "***"); 
     
     /* Initializing items*/
         Item mail = new Item("mail", "░░█░░░███░░░█░░" + 
@@ -120,10 +119,17 @@ public class GameSetup {
     public void setUpGame() { 
         
         /* Placing the required books into the rooms*/
-         
+         foyer.addItem(achebe);
+         foyer.addItem(cervantes);
+         foyer.addItem(dostoyevsky);
+         foyer.addItem(hurston);
+         foyer.addItem(kafka);
+         foyer.addItem(machiavelli);
+         foyer.addItem(shikibu);
+         foyer.addItem(sophocles);
 
         /* ITEM PLACEMENT */
-        /*  The correct list and order for the inventory to submit is: 
+        /*  The correct list to submit to Janet is: 
             yam, bag_of_oats, socks, collar, cockroach, lamp, flower_vase, doll */
         correctBooks.add(achebe);
         correctBooks.add(cervantes);
@@ -165,10 +171,10 @@ public class GameSetup {
 
         /* ROOM/LOCATION SETUP */
         intern.setCurrentRoom(foyer); //Sets the initial location of the Player
+        
         /* Setting up exits to each Room */
-        msgRoomCorridor.addRoomExit("NORTH", msgRoom);
-        msgRoomCorridor.addRoomExit("SOUTH", outside);
-        outside.addRoomExit("NORTH", msgRoomCorridor);
+        msgRoom.addRoomExit("SOUTH", outside);
+        outside.addRoomExit("NORTH", msgRoom);
         outside.addRoomExit("SOUTH", foyer);
 
         foyer.addRoomExit("NORTH", outside );
