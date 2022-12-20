@@ -93,9 +93,16 @@ public class GameLoop{ //Source [1]
                                 }
                             break; 
                         case "look": 
-                            if (playerResponseParts[1].length() != 0) { 
+                            if (playerResponseParts[1].equals("inventory")) { 
+                                intern.printInventory();
+                            } else if (playerResponseParts[1].length() != 0) { 
                                 intern.look(playerResponseParts[1]); 
                             }
+                            break; 
+                        case "open":
+                            if (playerResponseParts[1].equals("help")) { 
+                                System.out.println("cheatsheet goes here!");
+                            } 
                             break; 
                         case "quit": 
                             System.out.println("You have ended the simulation");
@@ -105,7 +112,7 @@ public class GameLoop{ //Source [1]
                             System.out.println("No command selected");
                      }
                 } else { 
-                    System.out.println("Please enter 2 words: a command followed by one or more arguments. Type \"help\" for assistance"); 
+                    System.out.println("Please enter 2 words: a command followed by one or more arguments. Type \"open help\" for assistance"); 
                 }
             }
         while (isPlaying);
