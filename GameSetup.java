@@ -26,7 +26,7 @@ public class GameSetup {
         "\n ║      ║" +
         "\n        ║" +
         "\n ║      ║" +
-        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles"); 
+        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles", true, "How many books are there in all the OTHER rooms of the house?", "13"); 
     private Room kitchen = new Room("in the kitchen" + 
         "\n ╔═══════════╗" +           
         "\n ║           ║" +
