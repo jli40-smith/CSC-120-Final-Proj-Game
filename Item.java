@@ -45,13 +45,6 @@ public class Item {
         this.descrip = descrip; 
     }
 
-    /** 
-     * Method called by verb CHECK: Returns the description of an item, and was added for clarity
-     */
-    public String check() {
-        return getDescrip(); 
-    }
-
     /**
      * Main method for testing 
      * @param args Array for command line arguments which is not currently being used  
