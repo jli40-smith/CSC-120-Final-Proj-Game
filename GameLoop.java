@@ -23,10 +23,11 @@ public class GameLoop{ //Source [1]
 
         //Indicates when gameplay should end 
         boolean isPlaying = true;
+        int attempts = 3; //game ends if this counter reaches 3 
 
         Scanner playerInput = new Scanner(System.in); 
         String playerResponse; 
-/* 
+
         System.out.println(" ::::::::      :::     :::     ::: ::::::::::      ::::::::::: ::::::::       ::::    ::::  :::::::::: ::::    ::::   ::::::::  :::::::::  :::   :::");
         System.out.println(":+:    :+:   :+: :+:   :+:     :+: :+:                 :+:    :+:    :+:      +:+:+: :+:+:+ :+:        +:+:+: :+:+:+ :+:    :+: :+:    :+: :+:   :+:");  
         System.out.println("+:+         +:+   +:+  +:+     +:+ +:+                 +:+    +:+    +:+      +:+ +:+:+ +:+ +:+        +:+ +:+:+ +:+ +:+    +:+ +:+    +:+  +:+ +:+  ");  
@@ -35,28 +36,30 @@ public class GameLoop{ //Source [1]
         System.out.println("       +#+ +#+     +#+  +#+   +#+  +#+                 +#+    +#+    +#+      +#+       +#+ +#+        +#+       +#+ +#+    +#+ +#+    +#+    +#+   ");  
         System.out.println("#+#    #+# #+#     #+#   #+#+#+#   #+#                 #+#    #+#    #+#      #+#       #+# #+#        #+#       #+# #+#    #+# #+#    #+#    #+#   ");  
         System.out.println(" ########  ###     ###     ###     ##########          ###     ########       ###       ### ########## ###       ###  ########  ###    ###    ###   \n");  
-*/
 
-/* 
+
+
         // Exposition and Instructions 
         enterToContinue("Press ENTER to continue..."); 
 
         enterToContinue("I hope this letter reaches you before everything we have left is deleted");
         enterToContinue("You must be the intern working at the mind uploading company which has stored my mother's information");
         enterToContinue("You have access to a virtual model of her home which contains digital records of her possessions, the rooms in her house, and more");
-        enterToContinue("My mother lived before the country-wide literature ban, and her home model is one of the last places where you can find copies of now forbidden books");
-        enterToContinue("While I cannot directly give you the books' titles, I have given you a list of hints for every one of the 8 SPECIFIC titles you must recover");
+        enterToContinue("My mother lived before the state enacted the country-wide literature ban, and her home model is one of the last places where you can find copies of several now forbidden books");
+        enterToContinue("She had the foresight to disguise the book files as common household objects, so they were not destroyed");
+        enterToContinue("In particular, I need you to send me copies of 8 specific books"); 
+        enterToContinue("While the messages censor doesn't allow me to directly give you their titles, I've written a list of hints which will help you identify them");
         enterToContinue("You might encounter other books in your search, but I only want those on the list");
-        enterToContinue("Type LOOK REFERENCE to check that reference list");
-        enterToContinue("Please GRAB each of the banned books you find and store them in your inventory");
-        enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 2 times from the foyer to reach the MESSAGE room and send them to me with OPEN TRANSMISSION");
-        enterToContinue("I will only have one chance to copy the files from your inventory as soon as you type OPEN TRANSMISSION in the MESSAGE room, so please double check before you contact me!");
-        enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type OPEN HELP into the console");
+        enterToContinue("Type OPEN LIST to check that reference list");
+        enterToContinue("Please GRAB each of the banned books you find and store them in your inventory, and DROP anything you don't need");
+        enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 2 times from the foyer to reach the MESSAGE room and type OPEN TRANSMISSION");
+        enterToContinue("I will only have three chances to copy the files from your inventory when you type OPEN TRANSMISSION in the MESSAGE room, so please double check your inventory before you contact me");
+        enterToContinue("If you need to reread these directions or need to learn how to navigate the virtual home system type OPEN HELP into the console");
         enterToContinue("GOOD LUCK - Janet");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■0000000");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■00");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■■■");
-*/
+
         System.out.println("\n You are " + intern.getCurrentRoom(null).getName());
         System.out.println(intern.getCurrentRoom(null).getDescrip());
         intern.getCurrentRoom(null).printInventory(); 
@@ -166,7 +169,15 @@ public class GameLoop{ //Source [1]
                                         enterToContinue("NEW MESSAGE:");
                                         enterToContinue("I have received your files");
                                         enterToContinue("You did not recover the correct books");
-                                        enterToContinue("Keep going SOUTH if you want to try again, or EXIT HOUSE to give up");
+                                        if (attempts == 0) {
+                                            isPlaying = false; 
+                                            enterToContinue("I had faith in you");
+                                            enterToContinue("But maybe we were wrong to put you under so much pressure...");
+                                            enterToContinue("Goodbye");
+                                        } else {
+                                            enterToContinue("Keep going SOUTH, back to the house, if you want to try again. You have " + attempts + " more chances to help us. " + "Or, you can EXIT HOUSE to give up");
+                                            attempts-= 1; 
+                                        }
                                     }
                                     } else { 
                                     System.out.println("You can only transmit messages in the MESSAGE room");
@@ -177,8 +188,8 @@ public class GameLoop{ //Source [1]
                             if (playerResponseParts[1].equals("house")){
                                 System.out.println("You have exited the home model");
                                 enterToContinue("NEW MESSAGE:");
-                                enterToContinue("I had faith in you");
-                                enterToContinue("But maybe we were wrong to put you under so much pressure...");
+                                enterToContinue("I do not understand");
+                                enterToContinue("Maybe you were not the right person for this job");
                                 enterToContinue("Goodbye");
                                 isPlaying = false; 
                             }
