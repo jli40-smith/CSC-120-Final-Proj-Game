@@ -2,7 +2,7 @@
 
 ## Deliverables:
  - Your final codebase
- -                  Your revised annotated architecture diagram
+ - Your revised annotated architecture diagram
  -                  Design justification (including a brief discussion of at least one alternative you considered)
  -                  A map of your game's layout (if applicable)
  - `cheatsheet.md`
