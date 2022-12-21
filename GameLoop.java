@@ -135,8 +135,23 @@ public class GameLoop{ //Source [1]
                                 "\n look item - shows description of the item in the room or in your inventory" +  
                                 "\n     ex: look list" +
                                 "\n **Passwords**" +
-                                "\n y mother has locked some rooms with a password. Unfortunately, she never told me what they are" +
+                                "\n My mother has locked some rooms with a password. Unfortunately, she never told me what they are" +
                                 "\n If you look carefully around the virtual home model, you might be able to find the answers");
+                            } else if (playerResponseParts[1].equals("list")){
+                                System.out.println("**Notes on the 8 books**" +
+                                "\n> A Russian novel in which a poor college student commits a murder and succumbs to the guilt" +
+                                "\n> Written in the Heian period, this courtier's eponymous story is about the romance and problems in his life" +   
+                                "\n> About a man from a province in Spain who reads too many novels, and deludes himself into thinking that he is a knight-errant" +
+                                "\n> About a man who changes into a 'monstrous vermin' one morning, and just has to live with that fact" +
+                                "\n> The title refers to the fact that, in the end, everything just goes downhill..." +
+                                "\n> This girl's eponymous play is a Greek tragedy. Even though the title is short, her family's history of suffering is not" +
+                                "\n> A book about how to acquire power and keep it. From the title, you can obviously tell who the book was written for" +
+                                "\n> The title completes this famous line: 'They seemed to be staring at the dark, but...'" +
+                                "\n**How to Send Books to Janet**" +
+                                "\n1. type OPEN LIST" +
+                                "\n2. Grab all 8 books and have them in your inventory" +
+                                "\n3. Go north from the foyer to go outside of the house, and then go north again to the MESSAGE room" +
+                                "\n4. Type OPEN TRANSMISSION");
                             } else if (playerResponseParts[1].equals("transmission")) { 
                                 if (intern.getCurrentRoom(null).getDescrip().equals("***")) { 
                                     if (newGame.verifyBooks()) { 
