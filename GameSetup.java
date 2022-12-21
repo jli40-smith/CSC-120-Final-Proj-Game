@@ -20,7 +20,7 @@ public class GameSetup {
         "\n                  " +
         "\n   ║             ║" +
         "\n   ║             ║" +
-        "\n   ╚═════   ═════╝" , "There are 3 chairs around a table set for one. \n There's a lot on the table", true, "This house is on _ _ _ _ Street", "pike"); 
+        "\n   ╚═════   ═════╝" , "There are 3 chairs around a table set for one. \n There's a lot on the table", true, "This house is located on _ _ _ _ Street", "pike"); 
     private Room bathroom = new Room("in the bathroom" + 
         "\n ╔══════╗" +	          
         "\n ║      ║" +
@@ -37,7 +37,7 @@ public class GameSetup {
         "\n ║            " +
         "\n ║           ║" +
         "\n ║           ║" +
-        "\n ╚════   ════╝", "You immediately notice the peeling paisley wallpaper, and notice food on the counter" ); 
+        "\n ╚════   ════╝", "You immediately notice the peeling paisley wallpaper, and notice food on the counter", true, "What was my maiden name?", "prentice" ); 
     private Room bedroom = new Room("in the bedroom" + 
         "\n ╔════   ════╗" +	          
         "\n ║           ║" +
@@ -45,7 +45,7 @@ public class GameSetup {
         "\n              " +
         "\n ║           ║" +
         "\n ║           ║" +
-        "\n ╚═══════════╝", "The bed is made, and you look at the shelf next to the window"); 
+        "\n ╚═══════════╝", "The bed is made, and you look at the shelf next to the window", true, "I became an editor, but my husband Mark worked as an:", "actuary"); 
     private Room livingRoom = new Room("in the living room" + 
         "\n   ╔═════   ═════════════╗" + 
         "\n   ║                     ║" +
@@ -64,7 +64,7 @@ public class GameSetup {
         "\n ║        " +
         "\n ║       ║" +
         "\n ║       ║" +
-        "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil");  
+        "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil", true, "I moved into this house the same year I got my Masters degree. I was 29. \n When my husband finally moved out and we changed our address, how old was I?", "56");  
     private Room msgRoom = new Room("in the MESSAGE room. Type OPEN TRANSMISSON to send JANET what you think are the banned books whenever you are ready", "***"); 
     
     /* Initializing items*/
@@ -76,11 +76,11 @@ public class GameSetup {
         /* Creating all the non-book items */
         Item boots = new Item("boots", "There is grass crusted to the heels of both boots");
         Item mag = new Item("magazine", "It reads: \n 25 CLASSIC CHRISTMAS RECIPES \n 50 GIFTS under $50 \n 10 SLIMMING CROCKPOT RECIPES TO COOK FOR THE FAMILY"); 
-        Item card = new Item("card", "It probably fell out of the magazine: \n REQUEST RECEIVED We have updated your address in our records, and will begin mailing to your new address 05-08-2047"); 
+        Item card = new Item("card", "It probably fell out of the magazine: \n REQUEST RECEIVED: Congrats on the move! We have updated your address in our records, and will begin mailing to your new address 05-08-2047"); 
         Item photo = new Item("album", "It was lying open on the table. \n One person with long brown hair seems to appear in all of the photos"); 
         Item razor = new Item("razor", "A blue plastic razor"); 
         Item chisel = new Item("chisel", "A sharp rectangular tool with edges on both sides"); 
-        Item diploma = new Item("diploma", "Master of the Arts \n in Philosophy \n Awarded to E. Lowell"); 
+        Item diploma = new Item("diploma", "Master of the Arts \n in Philosophy \n Awarded to E. Lowell \n June 5th, 2018"); 
         Item holidayCard = new Item("holiday_card", "It reads: Wishing you a Merry Christmas! \n Mom, I couldn't make it again this year because of a conference, but we got you that gift off your list! \n Please brew your favorite blends with the new machine and enjoy your retirement :) \n - Love, Janet L"); 
         Item jewelryBox = new Item("silver_box", "It contains: \n Earrings, two tangled chain necklaces, a gold ring with E engraved on it"); 
         Item ring = new Item("ring", "A gold ring with M engraved on it"); 
@@ -90,7 +90,7 @@ public class GameSetup {
         Item yarnLabel= new Item("label", "It was torn off from something: \n Net Weight 25oz \n Cerulean Blue Lot A267 \n Super Bulky \n 100% Wool "); 
         Item brochure = new Item("brochure", "Dear Mark, Extend your membership in the Association of Actuaries Today!\n Platinum Member Benefits: \n Contact a global network of professionals in 56 countries and..."); 
         Item espressoMaker = new Item("espresso_machine", "It's in a cardboard box and you can't see inside\n But it says espresso machine on the packaging"); 
-        Item clipping = new Item("news_clipping", "Nathaniel Hawthorne High School Post : Under a photo of a smiling girl with blonde hair and tortoiseshell glasses, it reads: \n ...Outside of school, Miss. Prentice performs in the Heron Street Community Theatre and is studying Spanish on a quest to read all of the world's greatest works \n Our next senior..."); 
+        Item clipping = new Item("news_clipping", "Nathaniel Hawthorne High School Post : Under a photo of a smiling girl with blonde hair and tortoiseshell glasses, it reads: \n ...Outside of school, Miss. E Prentice performs in the Heron Street Community Theatre and is studying Spanish on a quest to read all of the world's greatest works \n Our next senior..."); 
         Item coffeePot = new Item("coffee_pot", "A metal pot with a long attached handle"); 
        
         /* Decoy books/classics */
