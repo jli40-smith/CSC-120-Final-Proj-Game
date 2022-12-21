@@ -51,7 +51,7 @@ public class GameLoop{ //Source [1]
         enterToContinue("Please GRAB each of the banned books you find and store them in your inventory");
         enterToContinue("Once you have filled your inventory with nothing else but the 8 books, go NORTH 2 times from the foyer to reach the MESSAGE room and send them to me with OPEN TRANSMISSION");
         enterToContinue("I will only have one chance to copy the files from your inventory as soon as you type OPEN TRANSMISSION in the MESSAGE room, so please double check before you contact me!");
-        enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type HELP into the console");
+        enterToContinue("If you need to reread these directions, need a refresher on how to navigate the virtual home system type OPEN HELP into the console");
         enterToContinue("GOOD LUCK - Janet");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■0000000");
         enterToContinue("LOADING VIRTUAL HOME MODEL ■■■■■■00");
@@ -117,7 +117,26 @@ public class GameLoop{ //Source [1]
                             break; 
                         case "open":
                             if (playerResponseParts[1].equals("help")) { 
-                                System.out.println("cheatsheet goes here!");
+                                System.out.println("***COMMANDS***" +
+                                "\n**(General Commands- type them verbatim to use)**" +
+                                "\n open help - shows list of available commands and tips on how to use them" + 
+                                "\n open list - shows information about the 8 books Janet wants you to find, and how to send them to her" + 
+                                "\n open transmission - (ONLY works in MESSAGE ROOM) sends your inventory to Janet for verification" +
+                                "\n look inventory - shows your inventory" +
+                                "\n look room- shows the inventory of the current room" +
+                                "\n exit house - quits the game" + 
+                                "\n **(Specific Commands- must be followed by specific direction or item)**" +
+                                "\n go n/e/s/w - moves you in a cardinal direction" + 
+                                "\n     ex: go s" +
+                                "\n grab item - adds item to your  inventory. You can have at most 8 items in your inventory" + 
+                                "\n     ex: grab magazine" +
+                                "\n drop item - drops item from your  inventory" + 
+                                "\n     ex: drop magazine" +
+                                "\n look item - shows description of the item in the room or in your inventory" +  
+                                "\n     ex: look list" +
+                                "\n **Passwords**" +
+                                "\n y mother has locked some rooms with a password. Unfortunately, she never told me what they are" +
+                                "\n If you look carefully around the virtual home model, you might be able to find the answers");
                             } else if (playerResponseParts[1].equals("transmission")) { 
                                 if (intern.getCurrentRoom(null).getDescrip().equals("***")) { 
                                     if (newGame.verifyBooks()) { 

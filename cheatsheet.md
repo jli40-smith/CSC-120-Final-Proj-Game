@@ -14,5 +14,7 @@ grab item - adds item to your  inventory
 look item - shows description of the item in the room or in your inventory  
     ex: look list
 
-
+**Passwords**
+Janet's mother has locked some rooms with a password. Unfortunately, Janet doesn't know these passwords. 
+If you look carefully around the virtual home model, you might be able to find the answers. 
 

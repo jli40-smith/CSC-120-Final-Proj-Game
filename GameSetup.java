@@ -26,7 +26,7 @@ public class GameSetup {
         "\n ║      ║" +
         "\n        ║" +
         "\n ║      ║" +
-        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles", true, "How many books are there in all the OTHER rooms of the house?", "13"); 
+        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles", true, "How many books are there in all the OTHER rooms of the house?", "14"); 
     private Room kitchen = new Room("in the kitchen" + 
         "\n ╔═══════════╗" +           
         "\n ║           ║" +
@@ -119,14 +119,14 @@ public class GameSetup {
     public void setUpGame() { 
         
         /* Placing the required books into the rooms*/
-         foyer.addItem(achebe);
-         foyer.addItem(cervantes);
-         foyer.addItem(dostoyevsky);
-         foyer.addItem(hurston);
-         foyer.addItem(kafka);
-         foyer.addItem(machiavelli);
-         foyer.addItem(shikibu);
-         foyer.addItem(sophocles);
+         diningRoom.addItem(achebe);
+         kitchen.addItem(cervantes);
+         bathroom.addItem(dostoyevsky);
+         livingRoom.addItem(hurston);
+         sunroom.addItem(kafka);
+         bedroom.addItem(machiavelli);
+         sunroom.addItem(shikibu);
+         sunroom.addItem(sophocles);
 
         /* ITEM PLACEMENT */
         /*  The correct list to submit to Janet is: 
