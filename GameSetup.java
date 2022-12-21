@@ -1,7 +1,9 @@
 import java.util.ArrayList;
-
+/**
+ * Sets up the game's items, player, and rooms
+ */
 public class GameSetup { 
-    /* Initializing all the rooms in the house */
+    /* Initializing Rooms*/
     private Room outside = new Room("outside Elsie's House" + 
         "\n  /  / / / / /     /  / /" +
         "\n//  / / /  //  // /  // " +
@@ -67,13 +69,12 @@ public class GameSetup {
         "\n ╚═══════╝", "A room with large glass windows, stacks of shelves, and bags of potting soil", true, "I moved into this house the same year I got my Masters degree. I was 29. \n When my husband finally moved out and we changed our address, how old was I?", "56");  
     private Room msgRoom = new Room("in the MESSAGE room. Type OPEN TRANSMISSON to send JANET what you think are the banned books whenever you are ready", "***"); 
     
-    /* Initializing items*/
+    /* Initializing non-book items */
         Item mail = new Item("mail", "░░█░░░███░░░█░░" + 
             "\n░█░█░░█░█░░█░█░" + 
             "\n░███░░█░█░░███░" +
             "\n░█░█░░███░░█░█░" + 
             "\n M. Lowell \n 193 E Pike St \n Lawrenceville \n Georgia 30046"); 
-        /* Creating all the non-book items */
         Item boots = new Item("boots", "There is grass crusted to the heels of both boots");
         Item mag = new Item("magazine", "It reads: \n 25 CLASSIC CHRISTMAS RECIPES \n 50 GIFTS under $50 \n 10 SLIMMING CROCKPOT RECIPES TO COOK FOR THE FAMILY"); 
         Item card = new Item("card", "It probably fell out of the magazine: \n REQUEST RECEIVED: Congrats on the move! We have updated your address in our records, and will begin mailing to your new address 05-08-2047"); 
@@ -92,11 +93,8 @@ public class GameSetup {
         Item espressoMaker = new Item("espresso_machine", "It's in a cardboard box and you can't see inside\n But it says espresso machine on the packaging"); 
         Item clipping = new Item("news_clipping", "Nathaniel Hawthorne High School Post : Under a photo of a smiling girl with blonde hair and tortoiseshell glasses, it reads: \n ...Outside of school, Miss. E Prentice performs in the Heron Street Community Theatre and is studying Spanish on a quest to read all of the world's greatest works \n Our next senior..."); 
         Item coffeePot = new Item("coffee_pot", "A metal pot with a long attached handle"); 
-       
-        /* Decoy books/classics */
-        Item bookS = new Item("bird_statue", "GOING SOLO - \n Living Alone and Liking It"); 
         
-        /* Banned Books to collect */
+        /* Initalizing the 8 requested books*/
         Item achebe = new Item("yam", "Things Fall Apart by Chinua Achebe"); 
         Item cervantes = new Item("bag_of_oats", "SEGVNDA PARTE \n DEL INGENIOSO CAVALLERO DON \n QVIXOTE DE LA MANCHA \n Miguel de Cervantes"); 
         Item dostoyevsky = new Item("socks", "Crime and Punishment by Fyodor Dostoyevsky"); 
@@ -105,8 +103,9 @@ public class GameSetup {
         Item machiavelli = new Item("lamp", "The Prince by Niccolo Machiavelli"); 
         Item shikibu = new Item("flower_vase", "The Tale of Genji by Murasaki Shikibu"); 
         Item sophocles = new Item("doll", "Antigone by Sophocles"); 
-    
+        
         /* Decoy books */
+        Item bk0 = new Item("bird_statue", "GOING SOLO - \n Living Alone and Liking It"); 
         Item bk1 = new Item("shoe_rack", "They Both Die at the End by Adam Silvera"); 
         Item bk2 = new Item("potting_soil", "The Brothers Karamazov by Fyodor Dostoyevsky"); 
         Item bk3 = new Item("decanter", "The Oedipus Cycle by Sophocles"); 
@@ -119,18 +118,24 @@ public class GameSetup {
         Item bk10 = new Item("ottoman", "Masterpieces of Irish Crochet Lace edited by Thérèse de Dillmont"); 
         Item bk11 = new Item("houseplant", "Financial Mathematics, 5th Edition"); 
 
-        /*Correct list of books to bring to the MESSAGE room  */
-        ArrayList<Item> correctBooks = new ArrayList<Item>(); 
-        
-        /* Adding all items to a map where their String name can be used to access the object */
+    /*Initalizing list of 8 correct books*/
+    ArrayList<Item> correctBooks = new ArrayList<Item>(); 
+    
+    /* Initialzing player */
     private Player intern; 
+    
+    /**
+     * Constructor for GameSetup
+     * @param Player the player character 
+     */
     public GameSetup(Player intern) { 
         this.intern = intern; 
     }
 
-    /* Sets up the game, places all items in Rooms, creates connections between Rooms */
+/**
+ * Adds items to rooms, adds exit connections to Rooms 
+ */
     public void setUpGame() { 
-        
         /* Placing the required books into the rooms*/
          diningRoom.addItem(achebe);
          kitchen.addItem(cervantes);
@@ -142,7 +147,7 @@ public class GameSetup {
          sunroom.addItem(sophocles);
 
         /* ITEM PLACEMENT */
-        /*  The correct list to submit to Janet is: 
+        /*  This means that the correct list to submit to Janet contains: 
             yam, bag_of_oats, socks, collar, cockroach, lamp, flower_vase, doll */
         correctBooks.add(achebe);
         correctBooks.add(cervantes);
@@ -153,11 +158,9 @@ public class GameSetup {
         correctBooks.add(shikibu);
         correctBooks.add(sophocles);
 
-        /* Adding the books to Rooms in the house */
-
-        /* Adding items and decoy books to each room of the house */
+        /* Adding items to each room of the house */
         outside.addItem(mail);
-        
+
         foyer.addItem(mag); 
         foyer.addItem(boots); 
         foyer.addItem(card);
@@ -167,17 +170,18 @@ public class GameSetup {
         bathroom.addItem(razor);
         bathroom.addItem(ring);
         bathroom.addItem(bk8);
+        bathroom.addItem(bk0);
         
         livingRoom.addItem(chisel);
         livingRoom.addItem(diploma);
         livingRoom.addItem(gnome);
+        livingRoom.addItem(clipping);
         livingRoom.addItem(bk7);
         livingRoom.addItem(bk10);
         
         bedroom.addItem(holidayCard);
         bedroom.addItem(jewelryBox);
         bedroom.addItem(yarnLabel);
-        bedroom.addItem(clipping);
         
         kitchen.addItem(coffeePot);
         kitchen.addItem(bk3);
@@ -189,7 +193,6 @@ public class GameSetup {
         diningRoom.addItem(cableNeedle);
         diningRoom.addItem(brochure);
         diningRoom.addItem(bk9);
-
 
         sunroom.addItem(bk2);
         sunroom.addItem(bk4);
@@ -235,6 +238,10 @@ public class GameSetup {
             }
         }
 
+    /** 
+     * Unused main method
+     * @param String[] args - unused 
+     */
     public static void main(String[] args) {
     }
 
