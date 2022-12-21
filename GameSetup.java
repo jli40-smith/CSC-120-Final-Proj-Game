@@ -226,7 +226,7 @@ public class GameSetup {
         sunroom.addRoomExit("EAST", bedroom);
     }
 
-    /* Checks if books submitted to Janet are right */
+    /* Checks if books submitted to Janet are right */ // Source [6]
         public boolean verifyBooks(){ 
             if (intern.getInventory().containsAll(correctBooks) && correctBooks.containsAll(intern.getInventory())) { 
                 return true; 
