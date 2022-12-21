@@ -52,6 +52,7 @@ public class GameLoop{ //Source [1]
         System.out.println("\n You are " + intern.getCurrentRoom(null).getName());
         System.out.println(intern.getCurrentRoom(null).getDescrip());
         intern.getCurrentRoom(null).printInventory(); 
+        System.out.println("Reminder: type GO S to go south, GO N to go north, etc. \n type OPEN HELP for help");
         
         /*Game loop begins */
         do { 
