@@ -26,7 +26,7 @@ public class GameSetup {
         "\n ║      ║" +
         "\n        ║" +
         "\n ║      ║" +
-        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles", true, "How many books are there in all the OTHER rooms of the house?", "14"); 
+        "\n ╚══════╝", "A claustrophobic but clean space with blue floral tiles", true, "How many books were there in all the OTHER rooms of the house?", "16"); 
     private Room kitchen = new Room("in the kitchen" + 
         "\n ╔═══════════╗" +           
         "\n ║           ║" +
@@ -96,7 +96,7 @@ public class GameSetup {
         /* Decoy books/classics */
         Item bookS = new Item("bird_statue", "GOING SOLO - \n Living Alone and Liking It"); 
         
-        /* Books to collect */
+        /* Banned Books to collect */
         Item achebe = new Item("yam", "Things Fall Apart by Chinua Achebe"); 
         Item cervantes = new Item("bag_of_oats", "SEGVNDA PARTE \n DEL INGENIOSO CAVALLERO DON \n QVIXOTE DE LA MANCHA \n Miguel de Cervantes"); 
         Item dostoyevsky = new Item("socks", "Crime and Punishment by Fyodor Dostoyevsky"); 
@@ -106,6 +106,19 @@ public class GameSetup {
         Item shikibu = new Item("flower_vase", "The Tale of Genji by Murasaki Shikibu"); 
         Item sophocles = new Item("doll", "Antigone by Sophocles"); 
     
+        /* Decoy books */
+        Item bk1 = new Item("shoe_rack", "They Both Die at the End by Adam Silvera"); 
+        Item bk2 = new Item("potting_soil", "The Brothers Karamazov by Fyodor Dostoyevsky"); 
+        Item bk3 = new Item("decanter", "The Oedipus Cycle by Sophocles"); 
+        Item bk4 = new Item("fertilizer", "Kokoro by Natsume Sōseki"); 
+        Item bk5 = new Item("whisk", "Metamorphoses by Ovid"); 
+        Item bk6 = new Item("microwave", "Cien años de soledad \n Gabriel García Márquez"); 
+        Item bk7 = new Item("wallet", "The Wealth of Nations by Adam Smith"); 
+        Item bk8 = new Item("potpourri", "The Trial by Franz Kafka"); 
+        Item bk9 = new Item("trophy", "How to Win Friends & Influence People by Dale Carnegie"); 
+        Item bk10 = new Item("ottoman", "Masterpieces of Irish Crochet Lace edited by Thérèse de Dillmont"); 
+        Item bk11 = new Item("houseplant", "Financial Mathematics, 5th Edition"); 
+
         /*Correct list of books to bring to the MESSAGE room  */
         ArrayList<Item> correctBooks = new ArrayList<Item>(); 
         
@@ -142,20 +155,24 @@ public class GameSetup {
 
         /* Adding the books to Rooms in the house */
 
-        /* Adding items to each room of the house */
+        /* Adding items and decoy books to each room of the house */
         outside.addItem(mail);
         
         foyer.addItem(mag); 
         foyer.addItem(boots); 
         foyer.addItem(card);
         foyer.addItem(espressoMaker);
+        foyer.addItem(bk1);
         
         bathroom.addItem(razor);
         bathroom.addItem(ring);
+        bathroom.addItem(bk8);
         
         livingRoom.addItem(chisel);
         livingRoom.addItem(diploma);
         livingRoom.addItem(gnome);
+        livingRoom.addItem(bk7);
+        livingRoom.addItem(bk10);
         
         bedroom.addItem(holidayCard);
         bedroom.addItem(jewelryBox);
@@ -163,11 +180,20 @@ public class GameSetup {
         bedroom.addItem(clipping);
         
         kitchen.addItem(coffeePot);
+        kitchen.addItem(bk3);
+        kitchen.addItem(bk5);
+        kitchen.addItem(bk6);
         
         diningRoom.addItem(photo);
         diningRoom.addItem(stitchHolder);
         diningRoom.addItem(cableNeedle);
         diningRoom.addItem(brochure);
+        diningRoom.addItem(bk9);
+
+
+        sunroom.addItem(bk2);
+        sunroom.addItem(bk4);
+        sunroom.addItem(bk11);
 
         /* ROOM/LOCATION SETUP */
         intern.setCurrentRoom(foyer); //Sets the initial location of the Player
